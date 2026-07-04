@@ -1,7 +1,35 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: 20px 0;
+  background-color: #0d1b2a; /* Темно-синій фон з Figma var(--blue-800) */
+  z-index: 100;
+  background-color: #0d1b2a;
+
+  background-image: -webkit-image-set(
+    url('../../assets/img/gallery/Union-heder-1x.png') 1x,
+    url('../../assets/img/gallery/Union-heder-2x.png') 2x
+  );
+  background-image: image-set(
+    url('../../assets/img/gallery/Union-heder-1x.png') 1x,
+    url('../../assets/img/gallery/Union-heder-2x.png') 2x
+  );
 }
 
+@media (max-width: 768px) {
+  .header {
+    background-image: -webkit-image-set(
+      url('../../assets/img/gallery/Union-mob-1x.png') 1x,
+      url('../../assets/img/gallery/Union-mob-2x.png') 2x
+    );
+    background-image: image-set(
+      url('../../assets/img/gallery/Union-mob-1x.png') 1x,
+      url('../../assets/img/gallery/Union-mob-2x.png') 2x
+    );
+  }
+}
 .wrapper {
   display: flex;
   gap: 60px;
@@ -17,13 +45,16 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
 }
 .nav-list {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 40px;
-  
 }
 .nav-link {
   position: relative;
