@@ -1,17 +1,42 @@
 <header class="header">
-  <nav class="nav">
-    <ul class="nav__list">
-      <li><a href="#about">About</a></li>
+  <div class="container wrapper">
+    <nav class="nav">
+      <a href="#" class="nav-logo">Home</a>
 
-      <li><a href="#how-to-play">How to Play</a></li>
+      <button type="button" class="burger-btn" data-action="open">Menu</button>
 
-      <li><a href="#gallery">Gallery</a></li>
+      <div class="burger-menu" data-visible="close">
+        <button type="button" class="btn-close" data-action="close">
+          &times;
+        </button>
 
-      <li><a href="#why-play">Why Play</a></li>
-
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <a class="header__button"> Google Play </a>
-  </nav>
+        <ul class="nav-list">
+          <li>
+            <a href="#hero" class="nav-link active" data-action="close">Home</a>
+          </li>
+          <li>
+            <a href="#about" class="nav-link" data-action="close"
+              >About the Game</a
+            >
+          </li>
+          <li>
+            <a href="#how-to-play" class="nav-link" data-action="close"
+              >How to Play</a
+            >
+          </li>
+          <li>
+            <a href="#gallery" class="nav-link" data-action="close">Gallery</a>
+          </li>
+          <li>
+            <a href="#why-play" class="nav-link" data-action="close"
+              >Why Play</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="nav-link" data-action="close">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 </header>
