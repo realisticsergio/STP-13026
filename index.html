@@ -2,60 +2,75 @@
 <html lang="en">
   <head>
     <script type="module" crossorigin src="/STP-13026/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/STP-13026/assets/styles-QLmQMNzK.css">
+    <link rel="stylesheet" crossorigin href="/STP-13026/assets/styles-p_PCk0up.css">
   </head>
   <body>
     <main>
-      <header class="header">
-  <div class="container wrapper">
-    <nav class="nav">
-      <ul class="nav-list">
-        <li><a href="#" class="nav-link">Home</a></li>
-        <li><a href="#" class="nav-link">About the Game</a></li>
-        <li><a href="#" class="nav-link">How to Play</a></li>
-        <li><a href="#" class="nav-link">Gallery</a></li>
-        <li><a href="#" class="nav-link">Why Play</a></li>
-        <li><a href="#" class="nav-link">Contact</a></li>
-      </ul>
+      <header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__home" href="/">Home</a>
+
+    <nav class="site-header__nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="#about">About the Game</a>
+      <a href="#how-to-play">How to Play</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#why-play">Why Play</a>
+      <a href="#contact">Contact</a>
     </nav>
 
-    <button class="burger-btn" aria-label="open menu">
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#fff"
-        stroke-width="2"
-      >
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
+    <button
+      class="site-header__burger"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      data-menu-open
+    >
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
 </header>
 
-<div class="burger-menu" data-visible="close">
-  <button class="btn-close" aria-label="Закрити меню">&times;</button>
+    <div class="mobile-menu" aria-hidden="true" data-menu>
+      <div class="mobile-menu__panel">
+        <div class="mobile-menu__top">
 
-  <ul
-    class="mobile-nav-list"
-    style="
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    "
-  >
-    <li><a href="#" class="nav-link active">Home</a></li>
-    <li><a href="#" class="nav-link">About the Game</a></li>
-    <li><a href="#" class="nav-link">How to Play</a></li>
-    <li><a href="#" class="nav-link">Gallery</a></li>
-    <li><a href="#" class="nav-link">Why Play</a></li>
-    <li><a href="#" class="nav-link">Contact</a></li>
-  </ul>
+          <button
+            class="mobile-menu__close"
+            type="button"
+            aria-label="Close menu"
+            data-menu-close
+          >
+            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+              <path
+                d="M3 3L15 15M15 3L3 15"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+          <a href="/">Home</a>
+          <a href="#about">About the Game</a>
+          <a href="#how-to-play">How to Play</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#why-play">Why Play</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <img
+          class="mobile-menu__image"
+          src="../assets/img/background/wood2-desctop-2x.webp"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
 </div>
 
 
