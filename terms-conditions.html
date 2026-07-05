@@ -5,46 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page 3</title>
-    <link rel="stylesheet" crossorigin href="/STP-13026/assets/styles-DVJsQR2S.css">
+    <link rel="stylesheet" crossorigin href="/STP-13026/assets/styles-QLmQMNzK.css">
   </head>
   <body>
     <header class="header">
   <div class="container wrapper">
     <nav class="nav">
-      <div class="burger-menu" data-visible="close">
-        <ul class="nav-list">
-          <li>
-            <a href="#hero" class="nav-link active" data-action="close">Home</a>
-          </li>
-          <li>
-            <a href="#about" class="nav-link" data-action="close"
-              >About the Game</a
-            >
-          </li>
-          <li>
-            <a href="#how-to-play" class="nav-link" data-action="close"
-              >How to Play</a
-            >
-          </li>
-          <li>
-            <a href="#gallery" class="nav-link" data-action="close">Gallery</a>
-          </li>
-          <li>
-            <a href="#why-play" class="nav-link" data-action="close"
-              >Why Play</a
-            >
-          </li>
-          <li>
-            <a href="#contact" class="nav-link" data-action="close">Contact</a>
-          </li>
-        </ul>
-        <button type="button" class="btn-close" data-action="close">
-          &times;
-        </button>
-      </div>
+      <ul class="nav-list">
+        <li><a href="#" class="nav-link">Home</a></li>
+        <li><a href="#" class="nav-link">About the Game</a></li>
+        <li><a href="#" class="nav-link">How to Play</a></li>
+        <li><a href="#" class="nav-link">Gallery</a></li>
+        <li><a href="#" class="nav-link">Why Play</a></li>
+        <li><a href="#" class="nav-link">Contact</a></li>
+      </ul>
     </nav>
+
+    <button class="burger-btn" aria-label="open menu">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#fff"
+        stroke-width="2"
+      >
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
   </div>
 </header>
+
+<div class="burger-menu" data-visible="close">
+  <button class="btn-close" aria-label="Закрити меню">&times;</button>
+
+  <ul
+    class="mobile-nav-list"
+    style="
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    "
+  >
+    <li><a href="#" class="nav-link active">Home</a></li>
+    <li><a href="#" class="nav-link">About the Game</a></li>
+    <li><a href="#" class="nav-link">How to Play</a></li>
+    <li><a href="#" class="nav-link">Gallery</a></li>
+    <li><a href="#" class="nav-link">Why Play</a></li>
+    <li><a href="#" class="nav-link">Contact</a></li>
+  </ul>
+</div>
 
 
     <main class="policy">
@@ -66,34 +80,30 @@
     </main>
 
     <footer class="site-footer">
+  <div class="site-footer__top-line"></div>
+
   <div class="container site-footer__inner">
     <div class="site-footer__brand">
-      <a class="site-footer__logo" href="/" aria-label="Street Conquest home">
-        <span class="site-footer__logo-text">Street Conquest</span>
-        <small class="site-footer__logo-sub">Map MMO RPG</small>
+      <h2 class="site-footer__title">Street Conquest: Map MMO RPG</h2>
+
+      <a
+        class="footer__google-play"
+        href="https://play.google.com/store/apps/details?id=com.streetconquest.game"
+      >
+        <img src="../assets/img/svg/googleplay.svg" alt="Google Play" />
       </a>
-      <p class="site-footer__tagline">Control the city. Rule the streets.</p>
     </div>
 
-    <nav class="site-footer__nav" aria-label="Footer navigation">
-      <a class="site-footer__link" href="/privacy-policy.html"
-        >Privacy Policy</a
-      >
-      <a class="site-footer__link" href="/terms-conditions.html"
-        >Terms of Service</a
-      >
-    </nav>
+    <div class="site-footer__info">
+      <nav class="site-footer__nav">
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms-conditions.html">Terms of Service</a>
+      </nav>
 
-    <div class="site-footer__contact">
-      <a class="site-footer__link" href="mailto:info@truvia.it.com"
-        >info@truvia.it.com</a
-      >
-      <span class="site-footer__domain">truvia.it.com</span>
+      <div class="site-footer__bottom">
+        <p>© 2026 truvia.it.com — All rights reserved.</p>
+      </div>
     </div>
-  </div>
-
-  <div class="container site-footer__bottom">
-    <p>&copy; 2026 truvia.it.com &mdash; All rights reserved.</p>
   </div>
 </footer>
 
