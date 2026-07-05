@@ -1,0 +1,171 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* .background-container {
+  position: relative;
+  background-image: url('../../../assets/img/background/background-small-icon-desctop-1x.webp');
+  background-repeat: no-repeat;
+  background-size: 995px 1526px;
+  /* точний розмір з Figma */
+  /* background-position: left top;
+  padding: 0 20px;
+} */ */
+
+h1 {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  text-align: center;
+  padding-bottom: 36px;
+}
+
+h2 {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  padding-bottom: 36px;
+}
+
+p {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 20px;
+  /* щоб крапки не з'їжджали за межі блоку */
+}
+
+li {
+  list-style: inherit;
+}
+
+ul,
+ol,
+li {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #fafefe;
+}
+
+.policy__content {
+  padding-top: 130px;
+  padding-bottom: 48px;
+}
+
+.container--privacy {
+  padding-bottom: 36px;
+  position: relative;
+}
+
+.policy__title {
+  display: none;
+}
+.container a,
+.container p {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.background--container--elipse--right-1 {
+  position: relative;
+  background-image: url('../../../assets/img/background/background-ellipse-desctop-1x.webp');
+  background-repeat: no-repeat;
+  background-size: 510px 510px;
+  background-position-x: -50%;
+  background-position-y: 29%;
+}
+.background--container--elipse--left-1{
+position: relative;
+  background-image: url('../../../assets/img/background/background-ellipse-desctop-1x.webp');
+  background-repeat: no-repeat;
+  background-size: 510px 510px;
+  background-position-x: 150%;
+  background-position-y: 24%;
+}
+.background--container--elipse--right-2{
+  position: relative;
+    background-image: url('../../../assets/img/background/background-ellipse-desctop-1x.webp');
+    background-repeat: no-repeat;
+    background-size: 510px 510px;
+    background-position-x: -50%;
+    background-position-y: 84%;
+}
+.background--container--flag{
+  position: relative;
+    background-image: url('../../../assets/img/background/background-small-icon-desctop-1x.webp');
+    background-repeat: no-repeat;
+    background-size: 995px 1526px;
+    /* точний розмір з Figma */
+    background-position: left top;
+    background-position-y: 44%;
+}
+.background--container--elipse--right-3{
+  position: relative;
+    background-image: url('../../../assets/img/background/background-ellipse-desctop-1x.webp');
+    background-repeat: no-repeat;
+    background-size: 510px 510px;
+    background-position: bottom;
+    background-position-x: -29%;
+      background-position-y: 100.2%;
+}
+
+
+
+
+
+
+.hero-shadow {
+  width: 360px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(32, 166, 227, 1) -68%, rgba(32, 166, 227, -0.7) 72%, rgba(32, 166, 227, 0) 100%);
+
+  position: absolute;
+  filter: blur(5px);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -70px;
+  z-index: 0;
+  /* під персонажем */
+}
+
+.policy-illustration {
+  position: relative;
+  z-index: 1;
+  max-width: none;
+  width: 173px;
+}
+.policy-illustration--small+.hero-shadow,
+.hero-shadow--small {
+  width: 300px;
+  height: 100px;
+  bottom: -18px;
+  left: 86px;
+}
+.policy-illustration-wrapper {
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+}
+
+.policy-illustration-wrapper--float-right {
+  float: right;
+  margin-left: 16px;
+  margin-top: -218px;
+  margin-bottom: 8px;
+}
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+  .policy__title {
+    display: block;
+    padding-top: 64px;
+  }
+}
