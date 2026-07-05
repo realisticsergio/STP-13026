@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   padding: 20px 0;
-  background-color: #0d1b2a; /* Темно-синій фон з Figma var(--blue-800) */
+  background-color: #0d1b2a;
   z-index: 100;
   background-color: #0d1b2a;
 
@@ -16,6 +16,10 @@
     url('../../assets/img/gallery/Union-heder-1x.png') 1x,
     url('../../assets/img/gallery/Union-heder-2x.png') 2x
   );
+}
+.burger-btn,
+.burger-menu {
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -30,6 +34,11 @@
     );
   }
 }
+
+.nav-list {
+  display: none;
+}
+
 .wrapper {
   display: flex;
   gap: 60px;
@@ -54,7 +63,9 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 40px;
+  gap: 72px;
+  color: #f2f2f2;
+  margin: auto;
 }
 .nav-link {
   position: relative;
