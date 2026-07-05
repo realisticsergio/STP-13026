@@ -22,6 +22,7 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
+  background-color: #103561;
 }
 
 main {
@@ -29,4 +30,33 @@ main {
 }
 main:has(.back-link) {
   text-align: center;
+}
+
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fafefe;
+}
+
+p {
+  color: #fafefe;
+}
+
+a {
+  font-family: "Nunito", sans-serif;
+  text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #20a6e3;
+  
+}
+
+a:hover {
+  text-decoration: none;
+  color: #10599E;
 }
