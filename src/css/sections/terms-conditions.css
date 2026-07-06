@@ -4,22 +4,13 @@
   box-sizing: border-box;
 }
 
-/* .background-container {
-  position: relative;
-  background-image: url('../../../assets/img/background/background-small-icon-desctop-1x.webp');
-  background-repeat: no-repeat;
-  background-size: 995px 1526px;
-  /* точний розмір з Figma */
-  /* background-position: left top;
-  padding: 0 20px;
-} */ */
-
 h1 {
+  display: none;
   font-family: "Lilita One", sans-serif;
   font-weight: 400;
   font-size: 40px;
   text-align: center;
-  padding-bottom: 36px;
+  
 }
 
 h2 {
@@ -56,7 +47,7 @@ li {
 
 .policy__content {
   padding-top: 130px;
-  padding-bottom: 48px;
+  
 }
 
 .container--privacy {
@@ -65,7 +56,7 @@ li {
 }
 
 .policy__title {
-  display: none;
+  display: none; 
 }
 .container a,
 .container p {
@@ -112,7 +103,7 @@ position: relative;
     background-repeat: no-repeat;
     background-size: 510px 510px;
     background-position: bottom;
-    background-position-x: -29%;
+    background-position-x: -44%;
       background-position-y: 100.2%;
 }
 
@@ -121,7 +112,7 @@ position: relative;
 
 
 
-.hero-shadow {
+.hero-shadow-terms {
   width: 360px;
   height: 90px;
   border-radius: 50%;
@@ -136,7 +127,7 @@ position: relative;
   /* під персонажем */
 }
 
-.policy-illustration {
+.policy-illustration-terms {
   position: relative;
   z-index: 1;
   max-width: none;
@@ -149,13 +140,13 @@ position: relative;
   bottom: -18px;
   left: 86px;
 }
-.policy-illustration-wrapper {
+.policy-illustration-wrapper-terms {
   position: relative;
   display: inline-block;
   z-index: 0;
 }
 
-.policy-illustration-wrapper--float-right {
+.policy-illustration-wrapper--float-right-terms {
   float: right;
   margin-left: 16px;
   margin-top: -218px;
@@ -164,8 +155,85 @@ position: relative;
 
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
-  .policy__title {
+  .policy__title{
     display: block;
-    padding-top: 64px;
+      padding-top: 64px;
+      padding-bottom: 64px;
+    font-size: 64px;    
   }
+  h2 {      
+    font-size: 36px;      
+  }
+  p {
+    font-size: 24px;
+  }
+  ul,
+  ol,
+  li {
+    font-size: 24px;
+  }
+  .policy__content {
+    padding-top: 0px;
+  }
+  .background--container--elipse--right-1 {      
+    background-image: url('../../../assets/img/background/background-ellipse-desctop-2x.webp');
+    background-size: 1157px 1157px;
+    background-position-x: 569%;
+    background-position-y: 93%;
+  }
+
+  .background--container--elipse--left-1 {   
+    background-image: none;
+    
+  }
+
+  .background--container--elipse--left-2 {
+    position: relative;
+    background-image: url('../../../assets/img/background/background-ellipse-desctop-2x.webp');
+    background-size: 511px 511px;
+    background-repeat: no-repeat;
+    background-position-x: -33%;
+    background-position-y: 52%;
+  }
+
+  .background--container--elipse--right-4{
+    position: relative;
+      background-image: url('../../../assets/img/background/background-ellipse-desctop-2x.webp');
+      background-repeat: no-repeat;
+      background-size: 510px 510px;
+      background-position-x: 133%;
+      background-position-y: 23%;
+  }
+  
+  .background--container--elipse--right-2 {
+    background-image: none;
+  }
+
+  .background--container--flag {    
+    background-image: url('../../../assets/img/background/background-larg-icon-desctop-2x.webp');
+    background-size: 1638px 3053px;
+    background-position-y: 73%;
+  }
+
+  .background--container--elipse--right-3 {
+    background-image: url('../../../assets/img/background/background-ellipse-desctop-2x.webp');
+    background-size: 1122px 1122px;    
+    background-position-x: 199%;
+    background-position-y: 103.2%;
+  }
+
+.hero-shadow-terms {   
+  background: radial-gradient(ellipse at center, rgba(32, 166, 227, 1) -68%, rgba(32, 166, 227, -0.7) 100%, rgba(32, 166, 227, 0) 100%);
+}
+
+.policy-illustration-terms {
+  width: 284px;
+}
+
+.policy-illustration--small+.hero-shadow,
+.hero-shadow--small {
+  width: 500px;
+  height: 200px;
+}
+
 }
