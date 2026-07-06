@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.background-container {
+.background-container__privacy {
   position: relative;
   background-image: url('../../../assets/img/background/background-small-icon-desctop-1x.webp');
   background-repeat: no-repeat;
@@ -14,7 +14,7 @@
   padding: 0 20px;
 }
 
-h1 {
+.policy__title {
   font-family: "Lilita One", sans-serif;
   font-weight: 400;
   font-size: 40px;
@@ -162,14 +162,14 @@ li {
 }
 
 @media only screen and (min-width: 1440px) {
-  .background-container {
+  .background-container__privacy {
     background-image: url('../../../assets/img/background/background-small-icon-desctop-2x.webp');
     background-size: 1638px 3052px;
     /* 995x1526 * 2 */
     padding: 0 78px;
   }
 
-  h1 {
+    .policy__title {
     font-size: 64px;
   }
 

@@ -4,15 +4,6 @@
   box-sizing: border-box;
 }
 
-h1 {
-  display: none;
-  font-family: "Lilita One", sans-serif;
-  font-weight: 400;
-  font-size: 40px;
-  text-align: center;
-  
-}
-
 h2 {
   font-family: "Lilita One", sans-serif;
   font-weight: 400;
@@ -55,8 +46,12 @@ li {
   position: relative;
 }
 
-.policy__title {
+.terms__title {
   display: none; 
+  font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
 }
 .container a,
 .container p {
@@ -107,11 +102,6 @@ position: relative;
       background-position-y: 100.2%;
 }
 
-
-
-
-
-
 .hero-shadow-terms {
   width: 360px;
   height: 90px;
@@ -155,7 +145,7 @@ position: relative;
 
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
-  .policy__title{
+  .terms__title{
     display: block;
       padding-top: 64px;
       padding-bottom: 64px;
