@@ -1,0 +1,229 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h2 {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  padding-bottom: 36px;
+}
+
+p {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 20px;
+  /* щоб крапки не з'їжджали за межі блоку */
+}
+
+li {
+  list-style: inherit;
+}
+
+ul,
+ol,
+li {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #fafefe;
+}
+
+.policy__content {
+  padding-top: 130px;
+  
+}
+
+.container--privacy {
+  padding-bottom: 36px;
+  position: relative;
+}
+
+.terms__title {
+  display: none; 
+  font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
+}
+.container a,
+.container p {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.background--container--elipse--right-1 {
+  position: relative;
+  background-image: url('../../../assets/img/background/background-ellipse-desctop-1x.webp');
+  background-repeat: no-repeat;
+  background-size: 510px 510px;
+  background-position-x: -50%;
+  background-position-y: 29%;
+}
+.background--container--elipse--left-1{
+position: relative;
+  background-image: url('../../../assets/img/background/background-ellipse-desctop-1x.webp');
+  background-repeat: no-repeat;
+  background-size: 510px 510px;
+  background-position-x: 150%;
+  background-position-y: 24%;
+}
+.background--container--elipse--right-2{
+  position: relative;
+    background-image: url('../../../assets/img/background/background-ellipse-desctop-1x.webp');
+    background-repeat: no-repeat;
+    background-size: 510px 510px;
+    background-position-x: -50%;
+    background-position-y: 84%;
+}
+.background--container--flag{
+  position: relative;
+    background-image: url('../../../assets/img/background/background-small-icon-desctop-1x.webp');
+    background-repeat: no-repeat;
+    background-size: 995px 1526px;
+    /* точний розмір з Figma */
+    background-position: left top;
+    background-position-y: 44%;
+}
+.background--container--elipse--right-3{
+  position: relative;
+    background-image: url('../../../assets/img/background/background-ellipse-desctop-1x.webp');
+    background-repeat: no-repeat;
+    background-size: 510px 510px;
+    background-position: bottom;
+    background-position-x: -44%;
+      background-position-y: 100.2%;
+}
+
+.hero-shadow-terms {
+  width: 360px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(32, 166, 227, 1) -68%, rgba(32, 166, 227, -0.7) 72%, rgba(32, 166, 227, 0) 100%);
+
+  position: absolute;
+  filter: blur(5px);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -70px;
+  z-index: 0;
+  /* під персонажем */
+}
+
+.policy-illustration-terms {
+  position: relative;
+  z-index: 1;
+  max-width: none;
+  width: 173px;
+}
+.policy-illustration--small+.hero-shadow,
+.hero-shadow--small {
+  width: 300px;
+  height: 100px;
+  bottom: -18px;
+  left: 86px;
+}
+.policy-illustration-wrapper-terms {
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+}
+
+.policy-illustration-wrapper--float-right-terms {
+  float: right;
+  margin-left: 16px;
+  margin-top: -218px;
+  margin-bottom: 8px;
+}
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+  .terms__title{
+    display: block;
+      padding-top: 64px;
+      padding-bottom: 64px;
+    font-size: 64px;    
+  }
+  h2 {      
+    font-size: 36px;      
+  }
+  p {
+    font-size: 24px;
+  }
+  ul,
+  ol,
+  li {
+    font-size: 24px;
+  }
+  .policy__content {
+    padding-top: 0px;
+  }
+  .background--container--elipse--right-1 {      
+    background-image: url('../../../assets/img/background/background-ellipse-desctop-2x.webp');
+    background-size: 1157px 1157px;
+    background-position-x: 569%;
+    background-position-y: 93%;
+  }
+
+  .background--container--elipse--left-1 {   
+    background-image: none;
+    
+  }
+
+  .background--container--elipse--left-2 {
+    position: relative;
+    background-image: url('../../../assets/img/background/background-ellipse-desctop-2x.webp');
+    background-size: 511px 511px;
+    background-repeat: no-repeat;
+    background-position-x: -33%;
+    background-position-y: 52%;
+  }
+
+  .background--container--elipse--right-4{
+    position: relative;
+      background-image: url('../../../assets/img/background/background-ellipse-desctop-2x.webp');
+      background-repeat: no-repeat;
+      background-size: 510px 510px;
+      background-position-x: 133%;
+      background-position-y: 23%;
+  }
+  
+  .background--container--elipse--right-2 {
+    background-image: none;
+  }
+
+  .background--container--flag {    
+    background-image: url('../../../assets/img/background/background-larg-icon-desctop-2x.webp');
+    background-size: 1638px 3053px;
+    background-position-y: 73%;
+  }
+
+  .background--container--elipse--right-3 {
+    background-image: url('../../../assets/img/background/background-ellipse-desctop-2x.webp');
+    background-size: 1122px 1122px;    
+    background-position-x: 199%;
+    background-position-y: 103.2%;
+  }
+
+.hero-shadow-terms {   
+  background: radial-gradient(ellipse at center, rgba(32, 166, 227, 1) -68%, rgba(32, 166, 227, -0.7) 100%, rgba(32, 166, 227, 0) 100%);
+}
+
+.policy-illustration-terms {
+  width: 284px;
+}
+
+.policy-illustration--small+.hero-shadow,
+.hero-shadow--small {
+  width: 500px;
+  height: 200px;
+}
+
+}
