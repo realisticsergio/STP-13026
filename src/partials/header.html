@@ -1,44 +1,82 @@
-<header class="site-header">
-  <div class="container site-header__inner">
-    <a class="site-header__home" href="/">Home</a>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STP-13026</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__overlay"></div>
+      <div class="container site-header__inner">
+        <a class="site-header__home" href="#home">Home</a>
 
-    <nav class="site-header__nav" aria-label="Main navigation">
-      <a href="/">Home</a>
-      <a href="#about">About the Game</a>
-      <a href="#how-to-play">How to Play</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#why-play">Why Play</a>
-      <a href="#contact">Contact</a>
-    </nav>
+        <nav class="site-header__nav" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About the Game</a>
+          <a href="#how-to-play">How to Play</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#why-play">Why Play</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-    <button
-      class="site-header__burger"
-      type="button"
-      aria-label="Open menu"
-      aria-expanded="false"
-      data-menu-open
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</header>
+        <button
+          class="site-header__burger"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          data-menu-open
+        >
+          <img
+            src="../assets/img/background/wood2-desctop-2x.webp"
+            alt=""
+            width="44"
+            height="44"
+          />
+          <svg
+            class="site-header__burger-icon"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M4 6H20M4 12H20M4 18H20"
+              stroke="#FFFFFF"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
 
     <div class="mobile-menu" aria-hidden="true" data-menu>
       <div class="mobile-menu__panel">
         <div class="mobile-menu__top">
-
           <button
             class="mobile-menu__close"
             type="button"
             aria-label="Close menu"
             data-menu-close
           >
-            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+            <img
+              src="../assets/img/background/wood2-desctop-2x.webp"
+              alt=""
+              width="44"
+              height="44"
+            />
+            <svg
+              class="site-header__burger-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              aria-hidden="true"
+            >
               <path
                 d="M3 3L15 15M15 3L3 15"
-                stroke="currentColor"
+                stroke="#FFFFFF"
                 stroke-width="3"
                 stroke-linecap="round"
               />
@@ -47,7 +85,7 @@
         </div>
 
         <nav class="mobile-menu__nav" aria-label="Mobile navigation">
-          <a href="/">Home</a>
+          <a class="is-active" href="#home">Home</a>
           <a href="#about">About the Game</a>
           <a href="#how-to-play">How to Play</a>
           <a href="#gallery">Gallery</a>
@@ -55,12 +93,32 @@
           <a href="#contact">Contact</a>
         </nav>
 
-        <img
-          class="mobile-menu__image"
-          src="../assets/img/background/wood2-desctop-2x.webp"
-          alt=""
-        />
+        <div class="mobile-menu__characters" aria-hidden="true">
+          <img
+            class="mobile-menu__shadow mobile-menu__shadow--small"
+            src="../assets/img/advantages/character-small.webp (1).png"
+            alt=""
+          />
+
+          <img
+            class="mobile-menu__shadow mobile-menu__shadow--big"
+            src="../assets/img/advantages/character-big.webp (1).png"
+            alt=""
+          />
+
+          <img
+            class="mobile-menu__character mobile-menu__character--small"
+            src="../assets/img//heroes/hero-desctop-2x_5.webp"
+            alt=""
+          />
+
+          <img
+            class="mobile-menu__character mobile-menu__character--big"
+            src="../assets/img/heroes/hero-desctop-1x_7.webp"
+            alt=""
+          />
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </body>
+</html>

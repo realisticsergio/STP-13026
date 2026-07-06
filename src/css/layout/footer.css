@@ -116,7 +116,7 @@
 .site-footer {
   position: relative;
   overflow: hidden;
-  background: #06254a;
+  background: var(--blue-800);
 }
 
 .site-footer::before {
