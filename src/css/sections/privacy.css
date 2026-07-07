@@ -1,7 +1,7 @@
 
 .background-container__privacy {
   position: relative;
-  background-image: url('../../../assets/img/background/background-small-icon-desctop-1x.webp');
+  background-image: url('../../assets/img/background/background-small-icon-desctop-1x.webp');
   background-repeat: no-repeat;
   background-size: 995px 1526px;
   /* точний розмір з Figma */
@@ -158,7 +158,7 @@ li {
 
 @media only screen and (min-width: 1440px) {
   .background-container__privacy {
-    background-image: url('../../../assets/img/background/background-small-icon-desctop-2x.webp');
+    background-image: url('../../assets/img/background/background-small-icon-desctop-2x.webp');
     background-size: 1638px 3052px;
     /* 995x1526 * 2 */
     padding: 0 78px;
