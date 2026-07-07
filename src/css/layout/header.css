@@ -172,6 +172,34 @@
 body.menu-open {
   overflow: hidden;
 }
+.site-header--legal .site-header__inner {
+  height: 92px;
+  padding: 40px 20px 8px;
+}
+
+.site-header__logo {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+}
+
+.site-header__logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.site-header__back {
+  font-family: 'Lilita One', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 20px;
+  color: var(--white);
+  text-decoration: none;
+}
 
 @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .site-header::before,
@@ -262,4 +290,21 @@ body.menu-open {
   width: 180px;
   right: -22px;
   bottom: 10px;
+}
+.site-header--legal .site-header__inner {
+  height: 80px;
+  padding: 0 80px;
+  justify-content: space-between;
+}
+
+.site-header__logo {
+  width: 52px;
+  height: 52px;
+}
+
+.site-header__back {
+  font-size: 20px;
+}
+.site-header__back:hover {
+  opacity: 0.8;
 }

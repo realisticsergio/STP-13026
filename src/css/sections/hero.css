@@ -7,61 +7,68 @@
 .background-hero {
   position: relative;
   background-image:
-linear-gradient(100deg,
-    rgba(16, 53, 97, 0) 0%,
-    rgba(16, 53, 97, 0.73) 73%,
-    rgba(16, 53, 97, 1) 100%),    url('../../assets/img/background/background-hero-desctop-1x.webp');
+    linear-gradient(
+      100deg,
+      rgba(16, 53, 97, 0) 0%,
+      rgba(16, 53, 97, 0.73) 73%,
+      rgba(16, 53, 97, 1) 100%
+    ),
+    url('../../assets/img/background/background-hero-desctop-1x.webp');
   background-size: cover, cover;
-  background-position: center, 75% center;
+  background-position:
+    center,
+    75% center;
   background-repeat: no-repeat, no-repeat;
-  min-height: 375px; 
+  min-height: 375px;
 }
 
-.container.hero__container{
+.container.hero__container {
   padding-top: 48px;
   padding-bottom: 48px;
   position: relative;
 }
-.hero__title{  
-  font-family: "Lilita One", sans-serif;
-font-weight: 400;
+.hero__title {
+  font-family: 'Lilita One', sans-serif;
+  font-weight: 400;
   font-size: 40px;
   text-align: left;
 }
 
-.hero__subtitle{
-  font-family: "Lilita One", sans-serif;
+.hero__subtitle {
+  font-family: 'Lilita One', sans-serif;
   font-weight: 400;
-    font-size: 32px;
-    padding:0;
+  font-size: 32px;
+  padding: 0;
 }
-.hero__content-text{
+.hero__content-text {
   display: flex;
   flex-direction: column;
   gap: 24px;
   margin-top: 245px;
 }
 
-.hero__character{
-  position:absolute;
+.hero__character {
+  position: absolute;
   top: 190px;
   right: 28px;
-  z-index: 1;        
+  z-index: 1;
 }
-.hero__character-img{
-  position:relative;
+.hero__character-img {
+  position: relative;
   z-index: 3;
   width: 171px;
   height: auto;
 }
-.hero__shadow{
-width: 280px;
+.hero__shadow {
+  width: 280px;
   height: 90px;
   border-radius: 50%;
-  background: radial-gradient(ellipse at center,
-      rgba(32, 166, 227, 1) 6%,
-      rgba(32, 166, 227, -0.7) 68%,
-      rgba(32, 166, 227, 0) 100%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(32, 166, 227, 1) 6%,
+    rgba(32, 166, 227, -0.7) 68%,
+    rgba(32, 166, 227, 0) 100%
+  );
 
   position: absolute;
   filter: blur(5px);
@@ -73,26 +80,29 @@ width: 280px;
 .hero__character-caption {
   display: none;
 }
-.hero__text{
-  font-family: "Nunito", sans-serif;
+.hero__text {
+  font-family: 'Nunito', sans-serif;
   font-weight: 800;
   font-size: 24px;
 }
-.hero__google-play{ 
+.hero__google-play {
   padding: 0 45px;
 }
-.hero__google-play img{
+.hero__google-play img {
   width: 100%;
-  height: auto;  
+  height: auto;
 }
 
-@media only screen and (min-width: 1440px){
-.background-hero {
+@media only screen and (min-width: 1440px) {
+  .background-hero {
     background-image:
-      linear-gradient(100deg,
+      linear-gradient(
+        100deg,
         rgba(16, 53, 97, 0) 0%,
         rgba(16, 53, 97, 0.73) 73%,
-        rgba(16, 53, 97, 1) 100%), url('../../assets/img/background/background-hero-desctop-2x.webp');
+        rgba(16, 53, 97, 1) 100%
+      ),
+      url('../../assets/img/background/background-hero-desctop-2x.webp');
     min-height: auto;
   }
   .container.hero__container {
@@ -132,14 +142,13 @@ width: 280px;
     margin: 12px auto 0;
     position: relative;
     z-index: 3;
-    font-family: "Nunito", sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-weight: 800;
     font-size: 20px;
     text-align: center;
     bottom: 50px;
   }
-    .hero__google-play {
-      padding: 0 84px 0 0;
-    }
+  .hero__google-play {
+    padding: 0 84px 0 0;
+  }
 }
-
