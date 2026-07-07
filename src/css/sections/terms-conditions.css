@@ -56,7 +56,7 @@ li {
 
 .background--container--elipse--right-1 {
   position: relative;
-  background-image: url('../../../assets/img/background/background-ellipse-desctop-1x.webp');
+  background-image: url('../../assets/img/background/background-ellipse-desctop-1x.webp');
   background-repeat: no-repeat;
   background-size: 510px 510px;
   background-position-x: -50%;
@@ -64,7 +64,7 @@ li {
 }
 .background--container--elipse--left-1{
 position: relative;
-  background-image: url('../../../assets/img/background/background-ellipse-desctop-1x.webp');
+  background-image: url('../../assets/img/background/background-ellipse-desctop-1x.webp');
   background-repeat: no-repeat;
   background-size: 510px 510px;
   background-position-x: 150%;
@@ -72,7 +72,7 @@ position: relative;
 }
 .background--container--elipse--right-2{
   position: relative;
-    background-image: url('../../../assets/img/background/background-ellipse-desctop-1x.webp');
+    background-image: url('../../assets/img/background/background-ellipse-desctop-1x.webp');
     background-repeat: no-repeat;
     background-size: 510px 510px;
     background-position-x: -50%;
@@ -80,7 +80,7 @@ position: relative;
 }
 .background--container--flag{
   position: relative;
-    background-image: url('../../../assets/img/background/background-small-icon-desctop-1x.webp');
+    background-image: url('../../assets/img/background/background-small-icon-desctop-1x.webp');
     background-repeat: no-repeat;
     background-size: 995px 1526px;
     /* точний розмір з Figma */
@@ -89,7 +89,7 @@ position: relative;
 }
 .background--container--elipse--right-3{
   position: relative;
-    background-image: url('../../../assets/img/background/background-ellipse-desctop-1x.webp');
+    background-image: url('../../assets/img/background/background-ellipse-desctop-1x.webp');
     background-repeat: no-repeat;
     background-size: 510px 510px;
     background-position: bottom;
@@ -161,7 +161,7 @@ position: relative;
     padding-top: 0px;
   }
   .background--container--elipse--right-1 {      
-    background-image: url('../../../assets/img/background/background-ellipse-desctop-2x.webp');
+    background-image: url('../../assets/img/background/background-ellipse-desctop-2x.webp');
     background-size: 1157px 1157px;
     background-position-x: 569%;
     background-position-y: 93%;
@@ -174,7 +174,7 @@ position: relative;
 
   .background--container--elipse--left-2 {
     position: relative;
-    background-image: url('../../../assets/img/background/background-ellipse-desctop-2x.webp');
+    background-image: url('../../assets/img/background/background-ellipse-desctop-2x.webp');
     background-size: 511px 511px;
     background-repeat: no-repeat;
     background-position-x: -33%;
@@ -183,7 +183,7 @@ position: relative;
 
   .background--container--elipse--right-4{
     position: relative;
-      background-image: url('../../../assets/img/background/background-ellipse-desctop-2x.webp');
+      background-image: url('../../assets/img/background/background-ellipse-desctop-2x.webp');
       background-repeat: no-repeat;
       background-size: 510px 510px;
       background-position-x: 133%;
@@ -195,13 +195,13 @@ position: relative;
   }
 
   .background--container--flag {    
-    background-image: url('../../../assets/img/background/background-larg-icon-desctop-2x.webp');
+    background-image: url('../../assets/img/background/background-larg-icon-desctop-2x.webp');
     background-size: 1638px 3053px;
     background-position-y: 73%;
   }
 
   .background--container--elipse--right-3 {
-    background-image: url('../../../assets/img/background/background-ellipse-desctop-2x.webp');
+    background-image: url('../../assets/img/background/background-ellipse-desctop-2x.webp');
     background-size: 1122px 1122px;    
     background-position-x: 199%;
     background-position-y: 103.2%;
