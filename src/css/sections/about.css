@@ -1,0 +1,208 @@
+.about {
+  background: linear-gradient(180deg,
+      #06254a 0%,
+      #06254a 40%,
+      #103561 100%);
+}
+.container.about__container{
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+.about__title{
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  text-align: center;
+  padding-bottom: 32px;
+}
+.about__text{
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+.about__content.about__text--top{
+  padding-bottom: 32px;
+}
+.about__content.about__text--bottom{
+  padding-top: 73px;
+}
+
+
+.about__image-wrapper {
+  position: relative;
+  width: 335px;
+  height: 264px;  
+  margin: 0 auto;
+}
+
+.about__image-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  z-index: 0;
+}
+.about__character {
+  position: absolute;
+  z-index: 1;
+}
+
+.about__character-shadow {  
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center,
+      rgba(32, 166, 227, 1) 6%,
+      rgba(32, 166, 227, -0.7) 68%,
+      rgba(32, 166, 227, 0) 100%);
+  position: absolute;
+  filter: blur(5px);  
+  transform: translateX(-50%);  
+  z-index: -1;
+}
+/* Монстр 1 — синій (маленький) */
+.about__character--1 {
+  top: 189px;
+  left: -36px;
+}
+
+.about__character--1 .about__character-shadow {
+  width: 189px;
+  height: 62px;
+  bottom: -17px;
+  left: 73px;
+  z-index: -1;
+}
+
+/* Монстр 2 — червоний дракон */
+.about__character--2 {
+  top: 151px;
+  left: 40px;
+  z-index: 3;
+}
+
+.about__character--2 .about__character-shadow {
+  width: 189px;
+  height: 62px;
+  bottom: -15px;
+  left: 115px;
+  z-index: -1;
+}
+
+/* Монстр 3 — зелений (великий, домінуючий) */
+.about__character--3 {
+  bottom: -55px;
+  right: -58px;
+}
+
+.about__character--3 .about__character-shadow {
+  width: 204px;
+    height: 67px;
+    bottom: -1px;
+    left: 135px;
+    z-index: -1;
+}
+
+@media only screen and (min-width: 1440px) {
+  .container.about__container {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+  .about__title {
+    font-size: 48px;
+    padding-bottom: 64px;
+  }
+  .about__text {
+    font-size: 20px;
+  }
+  .about__content.about__text--top {
+    padding-bottom: 0px;
+  }
+
+  .about__content.about__text--bottom {
+    padding-top: 0px;
+  }
+    .about__container {
+      display: grid;
+      grid-template-columns: 628px 1fr ;
+      column-gap: 133px;
+      align-items: start;
+    }
+  
+    .about__title {
+      grid-column: 1 / -1;
+    }
+  
+    .about__image-wrapper {
+      grid-column: 1;
+      grid-row: 2 / 4;
+      width: 628px;
+      height: 486px;
+      margin: 0;
+    }
+    .about__content.about__text--top {
+      grid-column: 2;
+      grid-row: 2;
+      padding-bottom: 0;
+    }
+  
+    .about__content.about__text--bottom {
+      grid-column: 2;
+      grid-row: 3;
+      padding-top: 32px;
+    }
+    /* Монстр 1 — синій (маленький) */
+    .about__character--1 {
+      top: 299px;
+      left: -115px;
+    }
+  .about__blue-monster{
+      width: 319px;
+      height: 262px;
+    }
+    .about__character--1 .about__character-shadow {
+      width: 347px;
+      height: 114px;
+      bottom: -23px;
+      left: 170px;
+      z-index: -1;
+    }
+  
+    /* Монстр 2 — червоний дракон */
+    .about__character--2 {
+      top: 253px;
+      left: 184px;
+      z-index: 3;
+    }
+    .about__red-dragon{
+      width: 398px;
+        height: 327px;
+    }
+  
+    .about__character--2 .about__character-shadow {
+      width: 418px;
+      height: 137px;
+      bottom: -32px;
+      left: 221px;
+      z-index: -1;
+    }
+  
+    /* Монстр 3 — зелений (великий, домінуючий) */
+    .about__character--3 {
+      bottom: -78px;
+      right: -216px;
+    }
+  .about__character-img{
+    width: 536px;
+      height: 440px;
+  }
+    .about__character--3 .about__character-shadow {
+      width: 418px;
+      height: 137px;
+      bottom: -21px;
+      left: 283px;
+      z-index: -1;
+    }
+}

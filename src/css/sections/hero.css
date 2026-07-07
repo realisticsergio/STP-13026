@@ -1,9 +1,7 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
+.hero {
+  background-color: #06254A;
+}
 .background-hero {
   position: relative;
   background-image:
