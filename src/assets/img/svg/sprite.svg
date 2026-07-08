@@ -5,82 +5,25 @@
   <symbol id="icon-burger3" viewBox="0 0 24 15">
     <path stroke="currentColor" stroke-linecap="round" stroke-width="3" d="M3.5 1.5h17m-17 6h17m-17 6h17" />
   </symbol>
-  <symbol id="icon-chevron-left-l" viewBox="0 0 60 53">
-    <g filter="url(#filter0_i_65_553)">
-      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".7" stroke-width="7"
-        d="m37.5 13.25-15 13.25 15 13.25" />
-    </g>
-    <defs>
-      <filter id="filter0_i_65_553" width="22" height="37.5" x="19" y="9.75" color-interpolation-filters="sRGB"
-        filterUnits="userSpaceOnUse">
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-        <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-        <feOffset dy="4" />
-        <feGaussianBlur stdDeviation="2" />
-        <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
-        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-        <feBlend in2="shape" result="effect1_innerShadow_65_553" />
-      </filter>
-    </defs>
+  <symbol id="icon-chevron-left" viewBox="0 0 24 24">
+    <path
+      d="M14.414 5.586c-0.78-0.781-2.048-0.781-2.828 0l-6.415 6.414 6.415 6.414c0.39 0.391 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586c0.781-0.781 0.781-2.047 0-2.828l-3.585-3.586 3.585-3.586c0.781-0.781 0.781-2.047 0-2.828z">
+    </path>
   </symbol>
-  <symbol id="icon-chevron-left-s" viewBox="0 0 27 24">
-    <g filter="url(#filter0_i_69_1123)">
-      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".7" stroke-width="4"
-        d="m16.875 6-6.75 6 6.75 6" />
-    </g>
-    <defs>
-      <filter id="filter0_i_69_1123" width="10.75" height="20" x="8.125" y="4" color-interpolation-filters="sRGB"
-        filterUnits="userSpaceOnUse">
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-        <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-        <feOffset dy="4" />
-        <feGaussianBlur stdDeviation="3" />
-        <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
-        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-        <feBlend in2="shape" result="effect1_innerShadow_69_1123" />
-      </filter>
-    </defs>
+  <symbol id="icon-chevron-right" viewBox="0 0 24 24">
+    <path
+      d="M8.586 5.586c-0.781 0.781-0.781 2.047 0 2.828l3.585 3.586-3.585 3.586c-0.781 0.781-0.781 2.047 0 2.828 0.39 0.391 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586l6.415-6.414-6.415-6.414c-0.78-0.781-2.048-0.781-2.828 0z">
+    </path>
   </symbol>
-  <symbol id="icon-chevron-right-l" viewBox="0 0 60 53">
-    <g filter="url(#filter0_i_65_477)">
-      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".7" stroke-width="7"
-        d="m22.5 13.25 15 13.25-15 13.25" />
-    </g>
-    <defs>
-      <filter id="filter0_i_65_477" width="22" height="37.5" x="19" y="9.75" color-interpolation-filters="sRGB"
-        filterUnits="userSpaceOnUse">
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-        <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-        <feOffset dy="4" />
-        <feGaussianBlur stdDeviation="2" />
-        <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
-        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-        <feBlend in2="shape" result="effect1_innerShadow_65_477" />
-      </filter>
-    </defs>
+  <symbol id="icon-chevron-left-s" viewBox="0 0 22 32">
+    <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="8"
+      d="M17.5 4l-13.5 12 13.5 12"></path>
   </symbol>
-  <symbol id="icon-chevron-right-s" viewBox="0 0 27 24">
-    <g filter="url(#filter0_i_69_1127)">
-      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".7" stroke-width="4"
-        d="m10.125 6 6.75 6-6.75 6" />
-    </g>
-    <defs>
-      <filter id="filter0_i_69_1127" width="10.75" height="20" x="8.125" y="4" color-interpolation-filters="sRGB"
-        filterUnits="userSpaceOnUse">
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-        <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-        <feOffset dy="4" />
-        <feGaussianBlur stdDeviation="3" />
-        <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
-        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-        <feBlend in2="shape" result="effect1_innerShadow_69_1127" />
-      </filter>
-    </defs>
+  <symbol id="icon-chevron-right-s" viewBox="0 0 22 32">
+    <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="8"
+      d="M4 4l13.5 12-13.5 12"></path>
   </symbol>
+
   <symbol id="icon-close" viewBox="0 0 16 16">
     <path stroke="currentColor" stroke-linecap="round" stroke-width="3"
       d="M1.5 13.52 13.52 1.5m-11.51.01 12.02 12.021" />
