@@ -1,13 +1,8 @@
 const menu = document.querySelector('[data-menu]');
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const menuLinks = document.querySelectorAll('.mobile-menu__nav a');
-const hero = document.querySelector('.hero'); // якщо секції з класом .hero немає — просто не спрацює, помилки не буде
+const hero = document.querySelector('.hero');
 
-/* -----------------------------------------------------------
-   Висота меню = висота hero-секції (--hero-height у CSS).
-   Якщо .hero відсутній у розмітці — застосується fallback
-   692px, який вже прописаний у CSS.
-   ----------------------------------------------------------- */
 function updateMenuHeight() {
   if (!menu || !hero) return;
   menu.style.setProperty('--hero-height', `${hero.offsetHeight}px`);
@@ -38,19 +33,16 @@ function toggleMenu() {
 
 menuToggle?.addEventListener('click', toggleMenu);
 
-/* Клік по пункту меню — закриває */
 menuLinks.forEach(link => {
   link.addEventListener('click', closeMenu);
 });
 
-/* Escape — закриває */
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape') {
     closeMenu();
   }
 });
 
-/* Клік поза меню і поза кнопкою — закриває */
 document.addEventListener('click', event => {
   if (!menu || !menu.classList.contains('is-open')) return;
 
@@ -62,6 +54,5 @@ document.addEventListener('click', event => {
   }
 });
 
-/* Перерахунок висоти при зміні розміру вікна / орієнтації */
 window.addEventListener('resize', updateMenuHeight);
 window.addEventListener('load', updateMenuHeight);

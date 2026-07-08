@@ -89,7 +89,7 @@
 }
 
 /* зсув вліво = (ширина меню - ширина кнопки - padding панелі - padding хедера) */
-.site-header__burger[aria-expanded="true"] {
+.site-header__burger[aria-expanded='true'] {
   transform: translateX(calc(-1 * var(--menu-toggle-shift, 205px)));
 }
 
@@ -105,9 +105,11 @@
   transform: translate(-50%, -50%) rotate(0deg);
   z-index: 2;
   pointer-events: none;
-  color: #FAFEFE;
+  color: #fafefe;
   opacity: 1;
-  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+  transition:
+    opacity 0.25s ease-in-out,
+    transform 0.25s ease-in-out;
 }
 
 .site-header__burger-icon--close {
@@ -117,12 +119,13 @@
 
 /* :not(--close) — щоб правило працювало НЕЗАЛЕЖНО від того,
    чи додано клас --burger на першу іконку в HTML */
-.site-header__burger[aria-expanded="true"] .site-header__burger-icon:not(.site-header__burger-icon--close) {
+.site-header__burger[aria-expanded='true']
+  .site-header__burger-icon:not(.site-header__burger-icon--close) {
   opacity: 0;
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
-.site-header__burger[aria-expanded="true"] .site-header__burger-icon--close {
+.site-header__burger[aria-expanded='true'] .site-header__burger-icon--close {
   opacity: 1;
   transform: translate(-50%, -50%) rotate(0deg);
 }
@@ -207,7 +210,7 @@
 }
 
 .mobile-menu__nav a {
-  font-family: "Lilita One", sans-serif;
+  font-family: 'Lilita One', sans-serif;
   color: #f2f2f2;
   font-size: 20px;
   font-weight: 400;
@@ -223,9 +226,7 @@
 
 /* Сторінка під меню СКРОЛИТЬСЯ — жодних overflow:hidden на body */
 
-@media (min-resolution: 192dpi),
-(min-resolution: 2dppx) {
-
+@media (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .site-header::before,
   .mobile-menu__panel::before {
     background-image: url('../../assets/img/header/background-header-line-mob-2x.webp');
@@ -275,7 +276,7 @@
 }
 
 @media screen and (min-width: 1440px) and (min-resolution: 192dpi),
-screen and (min-width: 1440px) and (min-resolution: 2dppx) {
+  screen and (min-width: 1440px) and (min-resolution: 2dppx) {
   .site-header::before {
     background-image: url('../../assets/img/header/background-header-line-desctop-2x.webp');
   }
@@ -351,7 +352,7 @@ screen and (min-width: 1440px) and (min-resolution: 2dppx) {
   align-items: center;
   gap: 4px;
 
-  font-family: "Lilita One", sans-serif;
+  font-family: 'Lilita One', sans-serif;
   font-weight: 400;
   font-size: 20px;
   color: #fafefe;
@@ -363,7 +364,6 @@ screen and (min-width: 1440px) and (min-resolution: 2dppx) {
 .site-header__back:hover {
   opacity: 0.8;
   color: #10599e;
-
 }
 
 .site-header__back span {
@@ -372,9 +372,9 @@ screen and (min-width: 1440px) and (min-resolution: 2dppx) {
 }
 
 @media screen and (min-width: 1440px) {
-    .site-header__logo img,
-    .site-header__logo-icon {
-      width: 56px;
-      height: 56px;
-    }
+  .site-header__logo img,
+  .site-header__logo-icon {
+    width: 56px;
+    height: 56px;
+  }
 }
