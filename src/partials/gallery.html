@@ -1,7 +1,103 @@
 <section class="gallery" id="gallery">
-  <div class="container">
-    <ul class="gallery__list">
-      ...
-    </ul>
+  <div class="container gallery__container">
+    <h2 class="gallery__title">Gallery</h2>
+
+    <div class="gallery__slider-wrap">
+      <button
+        class="gallery__nav gallery__nav--prev"
+        type="button"
+        aria-label="Previous slide"
+        data-gallery-prev
+      >
+        <svg class="gallery__nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <use href="./assets/img/svg/sprite.svg#icon-chevron-left"></use>
+        </svg>
+      </button>
+
+      <div class="gallery__slider swiper" data-gallery-slider>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide gallery__slide" data-gallery-slide>
+            <img
+              class="gallery__slide-img"
+              src="./assets/img/slide-section/slide-section1-desctop-1x.webp"
+              srcset="
+                ./assets/img/slide-section/slide-section1-desctop-1x.webp 1x,
+                ./assets/img/slide-section/slide-section1-desctop-2x.webp 2x
+              "
+              alt="Conquer Your City"
+              width="302"
+              height="537"
+            />
+          </div>
+
+          <div class="swiper-slide gallery__slide" data-gallery-slide>
+            <img
+              class="gallery__slide-img"
+              src="./assets/img/slide-section/slide-section2-desctop-1x.webp"
+              srcset="
+                ./assets/img/slide-section/slide-section2-desctop-1x.webp 1x,
+                ./assets/img/slide-section/slide-section2-desctop-2x.webp 2x
+              "
+              alt="Construct and Upgrade"
+              width="302"
+              height="537"
+            />
+          </div>
+
+          <div class="swiper-slide gallery__slide" data-gallery-slide>
+            <img
+              class="gallery__slide-img"
+              src="./assets/img/slide-section/slide-section3-desctop-1x.webp"
+              srcset="
+                ./assets/img/slide-section/slide-section3-desctop-1x.webp 1x,
+                ./assets/img/slide-section/slide-section3-desctop-2x.webp 2x
+              "
+              alt="Join Forces with Friends"
+              width="302"
+              height="537"
+            />
+          </div>
+
+          <div class="swiper-slide gallery__slide" data-gallery-slide>
+            <img
+              class="gallery__slide-img"
+              src="./assets/img/slide-section/slide-section4-desctop-1x.webp"
+              srcset="
+                ./assets/img/slide-section/slide-section4-desctop-1x.webp 1x,
+                ./assets/img/slide-section/slide-section4-desctop-2x.webp 2x
+              "
+              alt="GPS Based Game"
+              width="302"
+              height="537"
+            />
+          </div>
+
+          <div class="swiper-slide gallery__slide" data-gallery-slide>
+            <img
+              class="gallery__slide-img"
+              src="./assets/img/slide-section/slide-section5-desctop-1x.webp"
+              srcset="
+                ./assets/img/slide-section/slide-section5-desctop-1x.webp 1x,
+                ./assets/img/slide-section/slide-section5-desctop-2x.webp 2x
+              "
+              alt="Power Up and Upgrade"
+              width="302"
+              height="537"
+            />
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="gallery__nav gallery__nav--next"
+        type="button"
+        aria-label="Next slide"
+        data-gallery-next
+      >
+        <svg class="gallery__nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <use href="./assets/img/svg/sprite.svg#icon-chevron-right"></use>
+        </svg>
+      </button>
+    </div>
   </div>
 </section>
