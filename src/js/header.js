@@ -1,41 +1,67 @@
 const menu = document.querySelector('[data-menu]');
-const menuOpenButton = document.querySelector('[data-menu-open]');
-const menuCloseButton = document.querySelector('[data-menu-close]');
+const menuToggle = document.querySelector('[data-menu-toggle]');
 const menuLinks = document.querySelectorAll('.mobile-menu__nav a');
+const hero = document.querySelector('.hero'); // якщо секції з класом .hero немає — просто не спрацює, помилки не буде
+
+/* -----------------------------------------------------------
+   Висота меню = висота hero-секції (--hero-height у CSS).
+   Якщо .hero відсутній у розмітці — застосується fallback
+   692px, який вже прописаний у CSS.
+   ----------------------------------------------------------- */
+function updateMenuHeight() {
+  if (!menu || !hero) return;
+  menu.style.setProperty('--hero-height', `${hero.offsetHeight}px`);
+}
 
 function openMenu() {
-  if (!menu || !menuOpenButton) return;
+  if (!menu || !menuToggle) return;
 
+  updateMenuHeight();
   menu.classList.add('is-open');
   menu.setAttribute('aria-hidden', 'false');
-  menuOpenButton.setAttribute('aria-expanded', 'true');
-  document.body.classList.add('menu-open');
+  menuToggle.setAttribute('aria-expanded', 'true');
 }
 
 function closeMenu() {
-  if (!menu || !menuOpenButton) return;
+  if (!menu || !menuToggle) return;
 
   menu.classList.remove('is-open');
   menu.setAttribute('aria-hidden', 'true');
-  menuOpenButton.setAttribute('aria-expanded', 'false');
-  document.body.classList.remove('menu-open');
+  menuToggle.setAttribute('aria-expanded', 'false');
 }
 
-menuOpenButton?.addEventListener('click', openMenu);
-menuCloseButton?.addEventListener('click', closeMenu);
+function toggleMenu() {
+  if (!menu) return;
+  const isOpen = menu.classList.contains('is-open');
+  isOpen ? closeMenu() : openMenu();
+}
 
-menu?.addEventListener('click', event => {
-  if (event.target === menu) {
-    closeMenu();
-  }
-});
+menuToggle?.addEventListener('click', toggleMenu);
 
+/* Клік по пункту меню — закриває */
 menuLinks.forEach(link => {
   link.addEventListener('click', closeMenu);
 });
 
+/* Escape — закриває */
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape') {
     closeMenu();
   }
 });
+
+/* Клік поза меню і поза кнопкою — закриває */
+document.addEventListener('click', event => {
+  if (!menu || !menu.classList.contains('is-open')) return;
+
+  const clickedInsideMenu = menu.contains(event.target);
+  const clickedToggle = menuToggle?.contains(event.target);
+
+  if (!clickedInsideMenu && !clickedToggle) {
+    closeMenu();
+  }
+});
+
+/* Перерахунок висоти при зміні розміру вікна / орієнтації */
+window.addEventListener('resize', updateMenuHeight);
+window.addEventListener('load', updateMenuHeight);
