@@ -1,71 +1,78 @@
+/* CONTACT */
+
 .contact {
   margin-top: 48px;
   text-align: center;
+  position: relative;
 }
-
+.contact__bug {
+  display: none;
+}
 .contact__label {
-  margin-bottom: 24px;
-
+  margin-bottom: 48px;
   font-family: var(--font-family);
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 400;
   line-height: 1.15;
   color: var(--white);
 }
 
-.contact__character {
-  display: block;
-  width: 120px;
-  height: auto;
-  margin: 0 auto;
-  display: none;
-}
-
 .contact__title {
-  margin: 16px 0 24px;
-
+  max-width: 335px;
+  margin: 0 auto 48px;
   font-family: var(--font-family);
   font-size: 40px;
   font-weight: 400;
-  line-height: 1.12;
+  line-height: 1.15;
   color: var(--white);
 }
 
 .contact__email {
   font-family: var(--second-family);
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 400;
   line-height: 1.2;
-
   color: var(--white);
-
   text-decoration: underline;
   text-underline-offset: 4px;
+  margin: 0 auto 48px;
 }
+
+/* DESKTOP */
 
 @media screen and (min-width: 1440px) {
   .contact {
     margin-top: 64px;
   }
+  .contact__bug {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    width: 223px;
+    height: auto;
 
+    left: 300px;
+    top: 175px;
+
+    pointer-events: none;
+  }
   .contact__label {
-    margin-bottom: 32px;
-
+    margin-bottom: 48px;
     font-size: 32px;
   }
 
-  .contact__character {
-    width: 180px;
-    margin: 0 auto -8px;
-  }
-
   .contact__title {
-    margin-bottom: 28px;
-
+    position: relative;
+    z-index: 1;
+    max-width: 628px;
+    margin: 0 auto 28px;
     font-size: 48px;
   }
 
   .contact__email {
+    position: relative;
+    z-index: 1;
+    margin: 0;
     font-size: 24px;
   }
 }
