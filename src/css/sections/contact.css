@@ -1,0 +1,71 @@
+.contact {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.contact__label {
+  margin-bottom: 24px;
+
+  font-family: var(--font-family);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--white);
+}
+
+.contact__character {
+  display: block;
+  width: 120px;
+  height: auto;
+  margin: 0 auto;
+  display: none;
+}
+
+.contact__title {
+  margin: 16px 0 24px;
+
+  font-family: var(--font-family);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.12;
+  color: var(--white);
+}
+
+.contact__email {
+  font-family: var(--second-family);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+
+  color: var(--white);
+
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media screen and (min-width: 1440px) {
+  .contact {
+    margin-top: 64px;
+  }
+
+  .contact__label {
+    margin-bottom: 32px;
+
+    font-size: 32px;
+  }
+
+  .contact__character {
+    width: 180px;
+    margin: 0 auto -8px;
+  }
+
+  .contact__title {
+    margin-bottom: 28px;
+
+    font-size: 48px;
+  }
+
+  .contact__email {
+    font-size: 24px;
+  }
+}
