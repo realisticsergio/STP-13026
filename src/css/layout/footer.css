@@ -113,6 +113,7 @@
     width: auto;
   }
 } */
+
 .site-footer {
   position: relative;
   overflow: hidden;
@@ -173,7 +174,7 @@
 }
 
 .site-footer__nav a {
-  color: #fff;
+  color: #fafefe;
   font-weight: 700;
   text-decoration: none;
   transition: opacity 0.3s;
@@ -182,8 +183,12 @@
 
 .site-footer__nav a:hover {
   opacity: 0.8;
+  color: #10599e;
 }
-
+.site-footer__nav a:active {
+  opacity: 0.8;
+  color: #10599e;
+}
 .site-footer__bottom p {
   margin: 0;
   color: #fff;

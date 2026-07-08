@@ -4,7 +4,6 @@
   background-image: url('../../assets/img/background/background-small-icon-desctop-1x.webp');
   background-repeat: no-repeat;
   background-size: 995px 1526px;
-  /* точний розмір з Figma */
   background-position: left top;
   padding: 0 20px;
 }
@@ -33,7 +32,6 @@ p {
 ul {
   list-style: disc;
   padding-left: 20px;
-  /* щоб крапки не з'їжджали за межі блоку */
 }
 
 li {
@@ -56,7 +54,7 @@ li {
 }
 
 .policy-content {
-  padding: 140px 0
+  padding: 48px 0
 }
 
 .container--privacy {
@@ -69,9 +67,6 @@ li {
   font-weight: 400;
   font-size: 32px;
 }
-
-
-/* Art block for privacy illustrations (USER RIGHTS block) */
 .policy__art {
   position: relative;
   width: 260px;
@@ -115,10 +110,7 @@ li {
   transform: translateX(-50%);
   bottom: -70px;
   z-index: 0;
-  /* під персонажем */
 }
-
-/* Illustrations used with float (HOW WE USE / WHEN DO WE SHARE blocks) */
 .policy-illustration {
   position: relative;
   z-index: 1;
@@ -160,7 +152,6 @@ li {
   .background-container__privacy {
     background-image: url('../../assets/img/background/background-small-icon-desctop-2x.webp');
     background-size: 1638px 3052px;
-    /* 995x1526 * 2 */
     padding: 0 78px;
   }
 
@@ -190,8 +181,6 @@ li {
     font-size: 36px;
     padding-bottom: 36px;
   }
-
-  /* --- Illustration 1: HOW WE USE USERS' INFORMATION (small, float-right) --- */
   .policy-illustration-wrapper--float-right {
     float: none;
     position: absolute;
@@ -203,7 +192,6 @@ li {
 
   .policy-text--clear {
     clear: none;
-    /* більше не потрібно, бо картинка не в потоці */
   }
 
   .policy-illustration {
@@ -218,8 +206,6 @@ li {
     bottom: -12px;
     left: 120px;
   }
-
-  /* --- Illustration 2: WHEN DO WE SHARE USER INFORMATION (large, float-left) --- */
   .policy-illustration-wrapper--float-left {
     float: left;
     margin: 55px 55px 55px 0;
@@ -235,18 +221,11 @@ li {
     height: 227px;
     bottom: -27px;
   }
-
-  /* clearfix для блоків, де є float-ілюстрації (1 і 2) */
   .container--privacy::after {
     content: "";
     display: table;
     clear: both;
   }
-
-  /* --- Illustration 3: USER RIGHTS block (policy__rights) ---
-     Це відповідає групуванню у Figma (Auto Layout Frame, Hug),
-     де заголовок + текст + список + монстр — один спільний блок.
-     Простий flex: текстова колонка + картинка, без крихких хаків. */
   .policy__rights {
     display: flex;
     align-items: flex-start;

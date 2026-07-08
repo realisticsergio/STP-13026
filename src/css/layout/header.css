@@ -1,7 +1,16 @@
+:root {
+  --menu-width: 267px;
+  /* ширина .mobile-menu, використовується для розрахунку зсуву кнопки */
+}
+
+/* =========================================================
+   SITE HEADER
+   ========================================================= */
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100;
+  /* завжди вище за .mobile-menu — хедер ніколи не перекривається */
   width: 100%;
   height: 92px;
   background: var(--blue-800);
@@ -43,59 +52,110 @@
   display: none;
 }
 
-.site-header__burger,
-.mobile-menu__close {
+/* =========================================================
+   ОДНА КНОПКА burger/close [data-menu-toggle]
+   Лишається в хедері (position: relative всередині flex-контейнера),
+   рухається ЛИШЕ по горизонталі в межах хедера через translateX,
+   іконки всередині перехрещуються через opacity + rotate.
+   ========================================================= */
+.site-header__burger {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
 
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
 
   padding: 0;
-  border: 0;
-  background: transparent;
+  border-style: solid;
+  border-width: 1px 2px 3px 2px;
+  border-color: rgba(58, 17, 0, 0.7);
+  border-radius: 5px;
   cursor: pointer;
+  overflow: hidden;
+
+  background-image: url('../../assets/img/background/wood2-desctop-1x.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  box-shadow: inset 0 4px 6px 0 rgba(0, 0, 0, 0.25);
+
+  /* рух ЛИШЕ по X, в межах хедера — ніколи по Y */
+  transition: transform 0.3s ease-in-out;
 }
 
-.site-header__burger img,
-.mobile-menu__close img {
-  display: block;
-  border-radius: 5px;
-  width: 44px;
-  height: 44px;
-}
-.site-header__burger,
-.mobile-menu__close {
-  position: relative;
-  overflow: hidden;
+/* зсув вліво = (ширина меню - ширина кнопки - padding панелі - padding хедера) */
+.site-header__burger[aria-expanded="true"] {
+  transform: translateX(calc(-1 * var(--menu-toggle-shift, 205px)));
 }
 
 .site-header__burger-icon {
   position: absolute;
   top: 50%;
   left: 50%;
-
   width: 18px;
   height: 18px;
-
-  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%) rotate(0deg);
   z-index: 2;
   pointer-events: none;
+  color: #FAFEFE;
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 }
+
+.site-header__burger-icon--close {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+/* :not(--close) — щоб правило працювало НЕЗАЛЕЖНО від того,
+   чи додано клас --burger на першу іконку в HTML */
+.site-header__burger[aria-expanded="true"] .site-header__burger-icon:not(.site-header__burger-icon--close) {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.site-header__burger[aria-expanded="true"] .site-header__burger-icon--close {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* =========================================================
+   MOBILE MENU
+   Кнопка закриття ТУТ БІЛЬШЕ НЕ ЖИВЕ — .mobile-menu__top
+   і .mobile-menu__close видалено з розмітки й стилів.
+   ========================================================= */
 .mobile-menu {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
+  position: absolute;
+  /* прив'язка до .site-header__inner (.container), не до вьюпорта */
+  top: 100%;
+  /* одразу під контейнером хедера */
+  right: 0;
+  z-index: 40;
+  /* нижче за .site-header (100) */
+  width: var(--menu-width, 267px);
+  /* fallback на випадок, якщо змінна не резолвиться в білді */
+  height: var(--hero-height, 692px);
+  /* JS підставляє висоту hero, якщо є .hero */
+  max-height: calc(100vh - 92px);
+
   display: flex;
-  justify-content: flex-end;
   background: transparent;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  overflow: hidden;
+  /* додатковий запобіжник від розпирання вмістом (характери/тіні з негативними офсетами) */
   transition:
-    opacity 0.25s ease,
-    visibility 0.25s ease;
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
 }
 
 .mobile-menu.is-open {
@@ -106,13 +166,13 @@
 
 .mobile-menu__panel {
   position: relative;
-  width: 267px;
-  min-height: 692px;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   color: var(--white);
   background: var(--blue-800);
   transform: translateX(100%);
-  transition: transform 0.25s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
 .mobile-menu.is-open .mobile-menu__panel {
@@ -131,52 +191,48 @@
   pointer-events: none;
 }
 
-.mobile-menu__top,
 .mobile-menu__nav,
 .mobile-menu__characters {
   position: relative;
   z-index: 1;
 }
 
-.mobile-menu__top {
-  height: 92px;
-  padding: 40px 20px 8px;
-}
-
-.mobile-menu__close {
-  position: absolute;
-  top: 40px;
-  left: 20px;
-}
-
 .mobile-menu__nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 28px 20px 0;
+  padding: 40px 20px 0;
+  /* верхній відступ компенсує відсутність .mobile-menu__top */
   gap: 64px;
 }
 
 .mobile-menu__nav a {
-  color: var(--white);
-  font-size: 14px;
-  font-weight: 800;
+  font-family: "Lilita One", sans-serif;
+  color: #f2f2f2;
+  font-size: 20px;
+  font-weight: 400;
   text-align: center;
   text-decoration: none;
 }
 
+.mobile-menu__nav a.is-active,
 .mobile-menu__nav a:first-child {
   color: var(--blue-200);
+  font-size: 24px;
 }
 
-body.menu-open {
-  overflow: hidden;
-}
+/* Сторінка під меню СКРОЛИТЬСЯ — жодних overflow:hidden на body */
 
-@media (min-resolution: 192dpi), (min-resolution: 2dppx) {
+@media (min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+
   .site-header::before,
   .mobile-menu__panel::before {
     background-image: url('../../assets/img/header/background-header-line-mob-2x.webp');
+  }
+
+  .site-header__burger {
+    background-image: url('../../assets/img/background/wood2-desctop-2x.webp');
   }
 }
 
@@ -219,12 +275,15 @@ body.menu-open {
 }
 
 @media screen and (min-width: 1440px) and (min-resolution: 192dpi),
-  screen and (min-width: 1440px) and (min-resolution: 2dppx) {
+screen and (min-width: 1440px) and (min-resolution: 2dppx) {
   .site-header::before {
     background-image: url('../../assets/img/header/background-header-line-desctop-2x.webp');
   }
 }
 
+/* =========================================================
+   CHARACTERS
+   ========================================================= */
 .mobile-menu__characters {
   left: 0;
   right: 0;
@@ -243,23 +302,79 @@ body.menu-open {
 .mobile-menu__shadow--small {
   width: 151px;
   left: -18px;
-  bottom: 4px;
+  bottom: -54px;
 }
 
 .mobile-menu__shadow--big {
   width: 193px;
-  right: -12px;
-  bottom: 0;
+  right: 7px;
+  bottom: -58px;
 }
 
 .mobile-menu__character--small {
   width: 113px;
   left: -2px;
-  bottom: 8px;
+  bottom: -47px;
 }
 
 .mobile-menu__character--big {
-  width: 180px;
+  width: 254px;
   right: -22px;
-  bottom: 10px;
+  bottom: -58px;
+}
+
+/* =========================================================
+   SITE HEADER — LEGAL VARIANT (privacy-policy.html і подібні)
+   Спрощений хедер: лого зліва, "Back Home" справа,
+   без бургера й мобільного меню.
+   ========================================================= */
+.site-header--legal .site-header__inner {
+  justify-content: space-between;
+}
+
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.site-header__logo img,
+.site-header__logo-icon {
+  width: 48px;
+  height: 48px;
+  display: block;
+  border-radius: 10px;
+}
+
+.site-header__back {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #fafefe;
+  text-decoration: none;
+
+  transition: opacity 0.2s ease-in-out;
+}
+
+.site-header__back:hover {
+  opacity: 0.8;
+  color: #10599e;
+
+}
+
+.site-header__back span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+@media screen and (min-width: 1440px) {
+    .site-header__logo img,
+    .site-header__logo-icon {
+      width: 56px;
+      height: 56px;
+    }
 }
