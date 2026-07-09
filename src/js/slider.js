@@ -10,22 +10,36 @@ const nextButton = document.querySelector('[data-gallery-next]');
 if (gallerySlider) {
   const desktopQuery = window.matchMedia('(min-width: 1440px)');
 
+  const wrapper = gallerySlider.querySelector('.swiper-wrapper');
+  const originalSlides = Array.from(wrapper.children);
+  originalSlides.forEach(slide => wrapper.appendChild(slide.cloneNode(true)));
+  originalSlides.forEach(slide => wrapper.appendChild(slide.cloneNode(true)));
+
   const swiper = new Swiper(gallerySlider, {
-    modules: [Navigation], // без цього navigation.nextEl/prevEl ігнорується повністю
+    modules: [Navigation],
     slidesPerView: 'auto',
     centeredSlides: true,
-    spaceBetween: 12, // мобільний gap — ТОЧНЕ значення ще не звірене з Figma
+    spaceBetween: 24,
+    slidesOffsetBefore: 56,
+    slidesOffsetAfter: 56,
     grabCursor: true,
     watchSlidesProgress: true,
+    loop: true,
+    loopAdditionalSlides: 10,
+    observer: true,
+    observeParents: true,
 
     navigation: {
-      nextEl: nextButton, // реальні елементи, не рядкові селектори —
-      prevEl: prevButton, // Swiper інакше шукає ЛИШЕ всередині свого контейнера
+      nextEl: nextButton,
+      prevEl: prevButton,
     },
 
     breakpoints: {
       1440: {
-        spaceBetween: 38, // з Figma-специфікації
+        spaceBetween: 38,
+        slidesPerView: 3, // фіксоване число — вимога до кількості слайдів стає точною: 3+1+1=5
+        slidesOffsetBefore: 120,
+        slidesOffsetAfter: 120,
       },
     },
 
@@ -41,17 +55,10 @@ if (gallerySlider) {
     },
   });
 
+  window.__swiper = swiper; // тимчасово, для дебагу — можна прибрати пізніше
+
   window.addEventListener('resize', () => applyEdgeBlur(swiper));
 
-  /* -----------------------------------------------------------
-     Swiper дає slide.progress: 0 у активного слайду,
-     ±1 у безпосереднього сусіда, і далі зростає з відстанню.
-
-     Мобілка: чіткий ТІЛЬКИ активний (поріг розмиття = 0)
-       — тобто вже безпосередні сусіди (progress ±1) розмиті.
-     Десктоп (1440+): чіткі активний + обидва сусіди
-       (поріг розмиття = 1) — розмиті лише ті, що ДАЛІ сусідів.
-     ----------------------------------------------------------- */
   function applyEdgeBlur(swiperInstance) {
     const blurThreshold = desktopQuery.matches ? 1 : 0;
 
