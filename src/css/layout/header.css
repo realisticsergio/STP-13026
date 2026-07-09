@@ -10,7 +10,6 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  /* завжди вище за .mobile-menu — хедер ніколи не перекривається */
   width: 100%;
   height: 92px;
   background: var(--blue-800);
@@ -19,12 +18,46 @@
 .site-header::before {
   content: '';
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  /* центрування в межах max-width, як і .container */
+  max-width: 375px;
+  /* той самий max-width, що й у .container / .site-header__inner на десктопі */
   background-image: url('../../assets/img/header/background-header-line-mob-1x.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
   pointer-events: none;
+}
+
+/* =========================================================
+   OVERLAY — декоративний напівпрозорий фон під хедером,
+   присутній на всіх сторінках, трохи виступає за нижню
+   межу хедера (bleed вниз у контент).
+   ========================================================= */
+.site-header__overlay {
+  position: absolute;
+  top: -76px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  /* центрування в межах max-width, який задає клас .container */
+  height: 104px;
+  /* мобільний розмір, з Figma-інспектора */
+  background: rgba(32, 166, 227, 0.3);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media screen and (min-width: 1440px) {
+  .site-header__overlay {
+    top: -90px;
+    height: 100px;
+    /* десктопний розмір, з Figma-інспектора */
+  }
 }
 
 .site-header__inner {
@@ -54,9 +87,6 @@
 
 /* =========================================================
    ОДНА КНОПКА burger/close [data-menu-toggle]
-   Лишається в хедері (position: relative всередині flex-контейнера),
-   рухається ЛИШЕ по горизонталі в межах хедера через translateX,
-   іконки всередині перехрещуються через opacity + rotate.
    ========================================================= */
 .site-header__burger {
   position: relative;
@@ -84,11 +114,9 @@
   background-origin: border-box;
   box-shadow: inset 0 4px 6px 0 rgba(0, 0, 0, 0.25);
 
-  /* рух ЛИШЕ по X, в межах хедера — ніколи по Y */
   transition: transform 0.3s ease-in-out;
 }
 
-/* зсув вліво = (ширина меню - ширина кнопки - padding панелі - padding хедера) */
 .site-header__burger[aria-expanded='true'] {
   transform: translateX(calc(-1 * var(--menu-toggle-shift, 205px)));
 }
@@ -117,10 +145,7 @@
   transform: translate(-50%, -50%) rotate(-90deg);
 }
 
-/* :not(--close) — щоб правило працювало НЕЗАЛЕЖНО від того,
-   чи додано клас --burger на першу іконку в HTML */
-.site-header__burger[aria-expanded='true']
-  .site-header__burger-icon:not(.site-header__burger-icon--close) {
+.site-header__burger[aria-expanded='true'] .site-header__burger-icon:not(.site-header__burger-icon--close) {
   opacity: 0;
   transform: translate(-50%, -50%) rotate(90deg);
 }
@@ -132,21 +157,16 @@
 
 /* =========================================================
    MOBILE MENU
-   Кнопка закриття ТУТ БІЛЬШЕ НЕ ЖИВЕ — .mobile-menu__top
-   і .mobile-menu__close видалено з розмітки й стилів.
+   Стан "відкрито" тепер через [data-open], не .is-open —
+   узгоджено з вимогою "JS працює тільки через data-атрибути".
    ========================================================= */
 .mobile-menu {
   position: absolute;
-  /* прив'язка до .site-header__inner (.container), не до вьюпорта */
   top: 100%;
-  /* одразу під контейнером хедера */
   right: 0;
   z-index: 40;
-  /* нижче за .site-header (100) */
   width: var(--menu-width, 267px);
-  /* fallback на випадок, якщо змінна не резолвиться в білді */
   height: var(--hero-height, 692px);
-  /* JS підставляє висоту hero, якщо є .hero */
   max-height: calc(100vh - 92px);
 
   display: flex;
@@ -155,16 +175,23 @@
   visibility: hidden;
   pointer-events: none;
   overflow: hidden;
-  /* додатковий запобіжник від розпирання вмістом (характери/тіні з негативними офсетами) */
   transition:
     opacity 0.3s ease-in-out,
     visibility 0.3s ease-in-out;
 }
 
-.mobile-menu.is-open {
+.mobile-menu[data-open] {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+}
+
+/* =========================================================
+   БЛОКУВАННЯ СКРОЛУ ПІД ЧАС ВІДКРИТОГО МЕНЮ
+   JS вішає data-scroll-lock на <body> при відкритті меню.
+   ========================================================= */
+body[data-scroll-lock] {
+  overflow: hidden;
 }
 
 .mobile-menu__panel {
@@ -178,7 +205,7 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.mobile-menu.is-open .mobile-menu__panel {
+.mobile-menu[data-open] .mobile-menu__panel {
   transform: translateX(0);
 }
 
@@ -204,8 +231,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px 0;
-  /* верхній відступ компенсує відсутність .mobile-menu__top */
+  padding: 48px 66px 0;
   gap: 64px;
 }
 
@@ -224,9 +250,9 @@
   font-size: 24px;
 }
 
-/* Сторінка під меню СКРОЛИТЬСЯ — жодних overflow:hidden на body */
+@media (min-resolution: 192dpi),
+(min-resolution: 2dppx) {
 
-@media (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .site-header::before,
   .mobile-menu__panel::before {
     background-image: url('../../assets/img/header/background-header-line-mob-2x.webp');
@@ -243,6 +269,7 @@
   }
 
   .site-header::before {
+    max-width: 1440px;
     background-image: url('../../assets/img/header/background-header-line-desctop-1x.webp');
   }
 
@@ -276,7 +303,7 @@
 }
 
 @media screen and (min-width: 1440px) and (min-resolution: 192dpi),
-  screen and (min-width: 1440px) and (min-resolution: 2dppx) {
+screen and (min-width: 1440px) and (min-resolution: 2dppx) {
   .site-header::before {
     background-image: url('../../assets/img/header/background-header-line-desctop-2x.webp');
   }
@@ -325,9 +352,7 @@
 }
 
 /* =========================================================
-   SITE HEADER — LEGAL VARIANT (privacy-policy.html і подібні)
-   Спрощений хедер: лого зліва, "Back Home" справа,
-   без бургера й мобільного меню.
+   SITE HEADER — LEGAL VARIANT
    ========================================================= */
 .site-header--legal .site-header__inner {
   justify-content: space-between;
@@ -372,6 +397,7 @@
 }
 
 @media screen and (min-width: 1440px) {
+
   .site-header__logo img,
   .site-header__logo-icon {
     width: 56px;
