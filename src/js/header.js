@@ -1,7 +1,7 @@
 const menu = document.querySelector('[data-menu]');
 const menuToggle = document.querySelector('[data-menu-toggle]');
-const menuLinks = document.querySelectorAll('.mobile-menu__nav a');
-const hero = document.querySelector('.hero');
+const menuLinks = document.querySelectorAll('[data-menu-link]');
+const hero = document.querySelector('[data-hero]');
 
 function updateMenuHeight() {
   if (!menu || !hero) return;
@@ -12,22 +12,24 @@ function openMenu() {
   if (!menu || !menuToggle) return;
 
   updateMenuHeight();
-  menu.classList.add('is-open');
+  menu.setAttribute('data-open', '');
   menu.setAttribute('aria-hidden', 'false');
   menuToggle.setAttribute('aria-expanded', 'true');
+  document.body.setAttribute('data-scroll-lock', ''); // блокує скрол body, поки меню відкрите
 }
 
 function closeMenu() {
   if (!menu || !menuToggle) return;
 
-  menu.classList.remove('is-open');
+  menu.removeAttribute('data-open');
   menu.setAttribute('aria-hidden', 'true');
   menuToggle.setAttribute('aria-expanded', 'false');
+  document.body.removeAttribute('data-scroll-lock');
 }
 
 function toggleMenu() {
   if (!menu) return;
-  const isOpen = menu.classList.contains('is-open');
+  const isOpen = menu.hasAttribute('data-open');
   isOpen ? closeMenu() : openMenu();
 }
 
@@ -44,7 +46,7 @@ document.addEventListener('keydown', event => {
 });
 
 document.addEventListener('click', event => {
-  if (!menu || !menu.classList.contains('is-open')) return;
+  if (!menu || !menu.hasAttribute('data-open')) return;
 
   const clickedInsideMenu = menu.contains(event.target);
   const clickedToggle = menuToggle?.contains(event.target);
