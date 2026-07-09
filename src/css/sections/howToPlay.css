@@ -1,0 +1,149 @@
+.container.how-to-play__container {
+  padding-top: 48px;
+  padding-bottom: 64px;
+}
+
+.how-to-play__title {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  text-align: center;
+  color: #fafefe;
+  padding-bottom: 0;
+  margin-bottom: 32px;
+}
+
+.how-to-play__desc,
+.how-to-play__label {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fafefe;
+}
+
+/* =========================================================
+   HOW TO PLAY SECTION
+   ========================================================= */
+.how-to-play {
+  position: relative;
+  overflow: hidden;
+  /* обрізає декоративні кола-фони по межі секції */
+}
+
+.how-to-play__list {
+  list-style: none;
+  /* прибирає крапки/маркери */
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  /* відступ між li */
+}
+
+.how-to-play__item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  /* gap між зображенням і текстом — для 1, 3, 5 (базове правило) */
+}
+
+.how-to-play__item--reverse {
+  flex-direction: row-reverse;
+  /* zigzag: картинка/текст міняються місцями */
+}
+
+/* -----------------------------------------------------------
+   ОДНАКОВИЙ РОЗМІР ЗОБРАЖЕНЬ
+   Незалежно від реальних пропорцій вихідного файлу
+   (скріншот UI гри, кругле фото тощо) — примусово 112x112,
+   object-fit: cover обрізає під квадрат, border-radius
+   робить кругле обрізання так само, як на макеті.
+   ----------------------------------------------------------- */
+.how-to-play__media {
+  position: relative;
+  flex-shrink: 0;
+  width: 112px;
+  height: 112px;
+}
+
+.how-to-play__media-img {
+  display: block;
+  width: 112px;
+  height: 112px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.how-to-play__media-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+
+  width: 217px;
+  height: 217px;
+
+  background-image: url('../../assets/img/background/background-ellipse-desctop-1x.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+  .how-to-play__media-bg {
+    background-image: url('../../assets/img/background/background-ellipse-desctop-2x.webp');
+  }
+}
+
+.how-to-play__text {
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  /* gap між параграфами (desc + label) */
+}
+
+/* -----------------------------------------------------------
+   ВИРІВНЮВАННЯ ТЕКСТУ
+   Базові елементи (1, 3, 5): картинка зліва, текст справа —
+   текст вирівняний по лівому краю (за замовчуванням).
+   Reverse-елементи (2, 4, 6): картинка справа, текст зліва —
+   текст притиснутий до правого краю, дзеркально до базових.
+   ----------------------------------------------------------- */
+.how-to-play__item--reverse .how-to-play__text {
+  text-align: right;
+}
+
+/* -----------------------------------------------------------
+   ЕЛЕМЕНТИ 2 і 4 — те саме, що базове правило, + додатковий
+   вертикальний марджин на зображенні
+   ----------------------------------------------------------- */
+.how-to-play__item:nth-child(2) .how-to-play__media,
+.how-to-play__item:nth-child(4) .how-to-play__media {
+  margin-top: 19px;
+  margin-bottom: 19px;
+}
+
+/* -----------------------------------------------------------
+   ЕЛЕМЕНТ 6 — немає другого параграфа (label),
+   тому замість gap між параграфами й padding контейнера —
+   власні top/bottom відступи на єдиному параграфі
+   ----------------------------------------------------------- */
+.how-to-play__item:nth-child(6) .how-to-play__text {
+  padding-top: 0;
+  padding-bottom: 0;
+  gap: 0;
+}
+
+.how-to-play__item:nth-child(6) .how-to-play__desc {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
