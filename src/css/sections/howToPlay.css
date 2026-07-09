@@ -81,7 +81,7 @@
   top: 50%;
   left: 50%;
   z-index: -1;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(0deg);
 
   width: 217px;
   height: 217px;
@@ -90,6 +90,19 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  animation: rotate-bg 90s linear infinite;
+    /* повільне безкінечне обертання */
+}
+
+@keyframes rotate-bg {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 @media (min-resolution: 192dpi),
