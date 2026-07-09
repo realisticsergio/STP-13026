@@ -66,8 +66,19 @@
 .about__character--1 {
   top: 189px;
   left: -36px;
+  animation: monster-blue-approach 4s ease-in-out infinite;
 }
+@keyframes monster-blue-approach {
 
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, 6px);
+  }
+}
 .about__character--1 .about__character-shadow {
   width: 189px;
   height: 62px;
@@ -81,6 +92,18 @@
   top: 151px;
   left: 40px;
   z-index: 3;
+  animation: monster-red-approach 4s ease-in-out infinite;
+}
+@keyframes monster-red-approach {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-10px, 0);
+  }
 }
 
 .about__character--2 .about__character-shadow {
@@ -95,8 +118,19 @@
 .about__character--3 {
   bottom: -55px;
   right: -58px;
+  animation: monster-green-breathe 5s ease-in-out infinite;
 }
+@keyframes monster-green-breathe {
 
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+}
 .about__character--3 .about__character-shadow {
   width: 204px;
     height: 67px;
@@ -205,4 +239,12 @@
       left: 283px;
       z-index: -1;
     }
+}
+@media (prefers-reduced-motion: reduce) {
+
+  .about__character--1,
+  .about__character--2,
+  .about__character--3 {
+    animation: none;
+  }
 }
