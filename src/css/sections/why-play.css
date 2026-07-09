@@ -2,8 +2,8 @@
   background-color: var(--blue-600);
   background-image: url('../../assets/img/background/background-larg-icon-desctop-1x.webp');
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
+  background-position: left top;
+  background-size: auto 1800px;
   color: var(--white);
 }
 @media (min-resolution: 2dppx) {
@@ -100,7 +100,51 @@
     border-radius: 10px;
   }
 }
+@media screen and (max-width: 1439px) {
+  .why-play__content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .why-play__info {
+    display: contents;
+  }
+
+  .why-play__text {
+    grid-row: 1;
+    justify-self: center;
+    margin-bottom: 0;
+  }
+
+  .why-play__phones {
+    grid-row: 2;
+  }
+
+  .why-play__card {
+    grid-row: 2;
+    z-index: 2;
+    align-self: end;
+    justify-self: center;
+
+    width: 101px;
+    height: 83px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .why-play__info > a {
+    grid-row: 3;
+    justify-self: center;
+  }
+}
 @media screen and (min-width: 1440px) {
+  .why-contact {
+    background-position: left top;
+    background-size: auto 2810px;
+  }
   .why-contact__inner {
     padding: 80px;
   }
