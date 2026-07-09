@@ -3,7 +3,6 @@
    ========================================================= */
 .gallery {
   position: relative;
-  background: var(--blue-800);
   padding: 48px 0px;
 }
 

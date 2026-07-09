@@ -108,7 +108,7 @@
 @media only screen and (min-width: 1440px) {
   .container.about__container {
     padding-top: 72px;
-    padding-bottom: 72px;
+    padding-bottom: 0;
   }
   .about__title {
     font-size: 48px;

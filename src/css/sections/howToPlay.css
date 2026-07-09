@@ -1,0 +1,202 @@
+.container.how-to-play__container {
+  padding-top: 48px;
+  padding-bottom: 64px;
+}
+
+.how-to-play__title {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  text-align: center;
+  color: #fafefe;
+  padding-bottom: 0;
+  margin-bottom: 32px;
+}
+
+.how-to-play__desc,
+.how-to-play__label {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fafefe;
+}
+
+/* =========================================================
+   HOW TO PLAY SECTION
+   ========================================================= */
+.how-to-play {
+  position: relative;
+  /* overflow: hidden прибрано навмисно — коло 6-го елемента
+     має виходити за межі секції вертикально (bleed у Gallery,
+     як на макеті). Горизонтальний захист від page-wide скролу
+     робимо глобально на html/body — див. коментар унизу файлу. */
+}
+
+.how-to-play__list {
+  list-style: none;
+  /* прибирає крапки/маркери */
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  /* відступ між li */
+}
+
+.how-to-play__item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  /* gap між зображенням і текстом — для 1, 3, 5 (базове правило) */
+}
+
+.how-to-play__item--reverse {
+  flex-direction: row-reverse;
+  /* zigzag: картинка/текст міняються місцями */
+}
+
+/* -----------------------------------------------------------
+   ОДНАКОВИЙ РОЗМІР ЗОБРАЖЕНЬ
+   ----------------------------------------------------------- */
+.how-to-play__media {
+  position: relative;
+  flex-shrink: 0;
+  width: 112px;
+  height: 112px;
+}
+
+.how-to-play__media-img {
+  display: block;
+  width: 112px;
+  height: 112px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.how-to-play__media-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+
+  width: 217px;
+  height: 217px;
+
+  background-image: url('../../assets/img/background/background-ellipse-desctop-1x.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+  .how-to-play__media-bg {
+    background-image: url('../../assets/img/background/background-ellipse-desctop-2x.webp');
+  }
+}
+
+.how-to-play__text {
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  /* gap між параграфами (desc + label) */
+}
+
+/* -----------------------------------------------------------
+   ВИРІВНЮВАННЯ ТЕКСТУ
+   ----------------------------------------------------------- */
+.how-to-play__item--reverse .how-to-play__text {
+  text-align: right;
+}
+
+/* -----------------------------------------------------------
+   ЕЛЕМЕНТИ 2 і 4
+   ----------------------------------------------------------- */
+.how-to-play__item:nth-child(2) .how-to-play__media,
+.how-to-play__item:nth-child(4) .how-to-play__media {
+  margin-top: 19px;
+  margin-bottom: 19px;
+}
+
+/* -----------------------------------------------------------
+   ЕЛЕМЕНТ 6
+   ----------------------------------------------------------- */
+.how-to-play__item:nth-child(6) .how-to-play__text {
+  padding-top: 0;
+  padding-bottom: 0;
+  gap: 0;
+}
+
+.how-to-play__item:nth-child(6) .how-to-play__desc {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 1440px) {
+  .container.how-to-play__container {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .how-to-play__title {
+    font-size: 48px;
+    padding-bottom: 0;
+    margin-bottom: 64px;
+  }
+
+  .how-to-play__desc,
+  .how-to-play__label {
+    font-size: 24px;
+  }
+
+  .how-to-play__list {
+    gap: 0px;
+  }
+
+  .how-to-play__media {
+    width: 302px;
+    height: 302px;
+  }
+
+  .how-to-play__media-img {
+    width: 302px;
+    height: 302px;
+  }
+
+  .how-to-play__media-bg {
+    width: 592px;
+    height: 592px;
+
+    background-image: url('../../assets/img/background/background-ellipse-desctop-2x.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .how-to-play__text {
+    width: 411px;
+    gap: 38px;
+  }
+
+  .how-to-play__item:nth-child(2) .how-to-play__media,
+  .how-to-play__item:nth-child(4) .how-to-play__media {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* Коло 6-го елемента навмисно НЕ обрізається — це і створює
+     ефект bleed у наступну секцію (Gallery), як на макеті.
+     Великий margin тут — саме той механізм, що "виштовхує"
+     коло вниз, у зону перекриття з Gallery. */
+  .how-to-play__item:nth-child(6) .how-to-play__desc {
+    margin-top: 110px;
+    margin-bottom: 110px;
+  }
+}
