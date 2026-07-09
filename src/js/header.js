@@ -15,7 +15,7 @@ function openMenu() {
   menu.setAttribute('data-open', '');
   menu.setAttribute('aria-hidden', 'false');
   menuToggle.setAttribute('aria-expanded', 'true');
-  document.body.setAttribute('data-scroll-lock', ''); // блокує скрол body, поки меню відкрите
+  document.body.setAttribute('data-scroll-lock', '');
 }
 
 function closeMenu() {
