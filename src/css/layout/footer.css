@@ -18,7 +18,7 @@
 }
 .site-footer__top-line {
   width: 100%;
-  height: 100px;
+  height: 50px;
   background: var(--blue-4-menu);
 }
 .site-footer__top-line,
