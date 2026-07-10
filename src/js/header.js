@@ -1,10 +1,6 @@
-const menuToggle = document.querySelector(
-  '.site-header__burger[data-action="open"]'
-);
-const menuClose = document.querySelector(
-  '.mobile-menu__close[data-action="close"]'
-);
-const menu = document.querySelector('.mobile-menu[data-visible]');
+const menuToggle = document.querySelector('[data-action="open"]');
+const menuClose = document.querySelector('[data-action="close"]');
+const menu = document.querySelector('[data-visible]');
 const menuLinks = document.querySelectorAll('[data-menu-link]');
 const hero = document.querySelector('[data-hero]');
 
