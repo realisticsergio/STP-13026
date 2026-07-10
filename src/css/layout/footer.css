@@ -4,30 +4,43 @@
   width: 100%;
   overflow: hidden;
 }
+
 .site-footer::before {
   content: '';
   position: absolute;
-  inset: 0;
-  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: 0 auto;
+  /* центрування в межах max-width, як і .site-footer__inner */
+  max-width: 375px;
+  /* той самий max-width, що й у .site-footer__inner */
+  z-index: 0;
   background-image: url('../../assets/img/footer/background-footer-line-mob-1x.webp');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   pointer-events: none;
 }
+
 .site-footer__top-line {
   width: 100%;
+  max-width: 375px;
+  /* той самий max-width, що й у .site-footer__inner */
+  margin: 0 auto;
+  /* центрування — смуга більше не тягнеться на всю ширину вьюпорта */
   height: 50px;
-  background: var(--blue-4-menu);
+  background: rgba(32, 166, 227, 0.3);
 }
+
 .site-footer__top-line,
 .site-footer__inner {
   position: relative;
   z-index: 1;
 }
+
 .site-footer__inner {
-  max-width: 1440px;
   margin: 0 auto;
   padding: 48px 20px;
   display: flex;
@@ -54,6 +67,7 @@
 .footer__google-play {
   display: none;
 }
+
 .hero__google-play-icon {
   width: 100%;
   height: 100%;
@@ -74,7 +88,8 @@
 }
 
 .site-footer__nav a {
-  font-family: var(--font-family); /* Lilita One */
+  font-family: var(--font-family);
+  /* Lilita One */
   font-weight: 400;
   color: var(--white);
   text-decoration: none;
@@ -88,7 +103,8 @@
 }
 
 .site-footer__bottom p {
-  font-family: var(--second-family); /* Nunito */
+  font-family: var(--second-family);
+  /* Nunito */
   font-weight: 400;
   color: var(--white);
   font-size: 24px;
@@ -98,9 +114,12 @@
 
 @media screen and (min-width: 1440px) {
   .site-footer::before {
+    max-width: 1440px;
     background-image: url('../../assets/img/footer/background-footer-line-desctop-1x.webp');
   }
-  .site-footer__inner {
+
+  .site-footer__inner {  
+    width: 1440px;
     padding: 72px 80px;
     flex-direction: row;
     justify-content: space-between;
@@ -109,6 +128,10 @@
     gap: 0;
   }
 
+    .site-footer__top-line{
+      width: 1440px;
+      max-width: 1440px;
+    }
   .site-footer__brand {
     align-items: flex-start;
     max-width: 520px;
@@ -119,11 +142,13 @@
     font-size: 48px;
     line-height: 1.1;
   }
+
   .footer__google-play {
     display: inline-block;
     width: 245px;
     height: 70px;
   }
+
   .site-footer__info {
     align-items: flex-end;
     text-align: right;
