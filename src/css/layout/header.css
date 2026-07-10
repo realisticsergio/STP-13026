@@ -1,18 +1,38 @@
 :root {
   --menu-width: 267px;
-  /* ширина .mobile-menu, використовується для розрахунку зсуву кнопки */
+  --header-height: 92px;
 }
-
+/* =========================================================
+   БЛОКУВАННЯ СКРОЛУ ПІД ЧАС ВІДКРИТОГО МЕНЮ
+   ========================================================= */
+html[data-scroll-lock],
+body[data-scroll-lock] {
+  overflow: hidden;
+  height: 100%;
+}
 /* =========================================================
    SITE HEADER
    ========================================================= */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   width: 100%;
   height: 92px;
   background: var(--blue-800);
+}
+body {
+  padding-top: var(--header-height);
+}
+#home,
+#about,
+#how-to-play,
+#gallery,
+#why-play,
+#contact {
+  scroll-margin-top: var(--header-height);
 }
 
 .site-header::before {
@@ -53,6 +73,10 @@
 }
 
 @media screen and (min-width: 1440px) {
+  :root {
+      --header-height: 80px;
+      /* десктопна висота хедера відрізняється від мобільної */
+    }
   .site-header__overlay {
     top: -90px;
     height: 100px;
@@ -179,8 +203,7 @@
     opacity 0.3s ease-in-out,
     visibility 0.3s ease-in-out;
 }
-
-.mobile-menu[data-open] {
+.mobile-menu[data-visible='open'] {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -205,7 +228,17 @@ body[data-scroll-lock] {
   transition: transform 0.3s ease-in-out;
 }
 
-.mobile-menu[data-open] .mobile-menu__panel {
+.mobile-menu__panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: var(--white);
+  background: var(--blue-800);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+.mobile-menu[data-visible='open'] .mobile-menu__panel {
   transform: translateX(0);
 }
 
@@ -245,10 +278,23 @@ body[data-scroll-lock] {
   text-decoration: none;
 }
 
-.mobile-menu__nav a.is-active,
+.mobile-menu__nav a[data-nav-active],
 .mobile-menu__nav a:first-child {
   color: var(--blue-200);
   font-size: 24px;
+}
+.site-header__burger[data-expanded='true'] {
+  transform: translateX(calc(-1 * var(--menu-toggle-shift, 205px)));
+}
+
+.site-header__burger[data-expanded='true'] .site-header__burger-icon:not(.site-header__burger-icon--close) {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.site-header__burger[data-expanded='true'] .site-header__burger-icon--close {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
 }
 
 @media (min-resolution: 192dpi),

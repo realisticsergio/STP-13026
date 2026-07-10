@@ -25,8 +25,8 @@
           class="site-header__burger"
           type="button"
           aria-label="Open menu"
-          aria-expanded="false"
-          data-menu-toggle
+          data-action="open"
+          data-expanded="false"
         >
           <svg
             class="site-header__burger-icon"
@@ -47,12 +47,13 @@
             <use href="./assets/img/svg/sprite.svg#icon-close"></use>
           </svg>
         </button>
-        <div class="mobile-menu" aria-hidden="true" data-menu>
+
+        <div class="mobile-menu" data-visible="close">
           <div class="mobile-menu__panel">
             <div class="mobile-menu__top"></div>
 
             <nav class="mobile-menu__nav" aria-label="Mobile navigation">
-              <a class="is-active" href="#home" data-menu-link>Home</a>
+              <a data-nav-active href="#home" data-menu-link>Home</a>
               <a href="#about" data-menu-link>About the Game</a>
               <a href="#how-to-play" data-menu-link>How to Play</a>
               <a href="#gallery" data-menu-link>Gallery</a>
@@ -66,25 +67,30 @@
                 src="./assets/img/advantages/character-small.webp (1).png"
                 alt=""
               />
-
               <img
                 class="mobile-menu__shadow mobile-menu__shadow--big"
                 src="./assets/img/advantages/character-big.webp (1).png"
                 alt=""
               />
-
               <img
                 class="mobile-menu__character mobile-menu__character--small"
                 src="./assets/img//heroes/hero-desctop-2x_5.webp"
                 alt=""
               />
-
               <img
                 class="mobile-menu__character mobile-menu__character--big"
                 src="./assets/img/heroes/hero-desctop-1x_7.webp"
                 alt=""
               />
             </div>
+
+            <button
+              type="button"
+              class="mobile-menu__close"
+              data-action="close"
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>

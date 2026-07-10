@@ -10,7 +10,7 @@ const nextButton = document.querySelector('[data-gallery-next]');
 if (gallerySlider) {
   const desktopQuery = window.matchMedia('(min-width: 1440px)');
 
-  const wrapper = gallerySlider.querySelector('.swiper-wrapper');
+  const wrapper = gallerySlider.querySelector('[data-swiper-wrapper]');
   const originalSlides = Array.from(wrapper.children);
   originalSlides.forEach(slide => wrapper.appendChild(slide.cloneNode(true)));
   originalSlides.forEach(slide => wrapper.appendChild(slide.cloneNode(true)));
