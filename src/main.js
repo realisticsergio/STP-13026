@@ -1,6 +1,4 @@
 import './js/header';
-import './js/faq';
-import './js/slider';
 import './js/scroll';
 import './css/styles.css';
 
