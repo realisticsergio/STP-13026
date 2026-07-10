@@ -19,7 +19,7 @@ function openMenu() {
   updateMenuHeight();
   menu.dataset.visible = 'open';
   menuToggle.dataset.expanded = 'true';
-  menuToggle.setAttribute('aria-expanded', 'true'); // для доступності лишаємо окремо, це не стан-перемикач, а атрибут a11y
+  menuToggle.setAttribute('aria-expanded', 'true');
   document.documentElement.dataset.scrollLock = '';
   document.body.dataset.scrollLock = '';
 }

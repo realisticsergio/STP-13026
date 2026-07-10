@@ -3,7 +3,7 @@
   --header-height: 92px;
 }
 /* =========================================================
-   БЛОКУВАННЯ СКРОЛУ ПІД ЧАС ВІДКРИТОГО МЕНЮ
+  БЛОКУВАННЯ СКРОЛУ ПІД ЧАС ВІДКРИТОГО МЕНЮ
    ========================================================= */
 html[data-scroll-lock],
 body[data-scroll-lock] {
@@ -11,7 +11,7 @@ body[data-scroll-lock] {
   height: 100%;
 }
 /* =========================================================
-   SITE HEADER
+  SITE HEADER
    ========================================================= */
 .site-header {
   position: fixed;
@@ -43,9 +43,7 @@ body {
   left: 0;
   right: 0;
   margin: 0 auto;
-  /* центрування в межах max-width, як і .container */
   max-width: 375px;
-  /* той самий max-width, що й у .container / .site-header__inner на десктопі */
   background-image: url('../../assets/img/header/background-header-line-mob-1x.webp');
   background-repeat: no-repeat;
   background-size: cover;
@@ -54,9 +52,7 @@ body {
 }
 
 /* =========================================================
-   OVERLAY — декоративний напівпрозорий фон під хедером,
-   присутній на всіх сторінках, трохи виступає за нижню
-   межу хедера (bleed вниз у контент).
+   OVERLAY 
    ========================================================= */
 .site-header__overlay {
   position: absolute;
@@ -64,9 +60,7 @@ body {
   left: 0;
   right: 0;
   margin: 0 auto;
-  /* центрування в межах max-width, який задає клас .container */
   height: 104px;
-  /* мобільний розмір, з Figma-інспектора */
   background: rgba(32, 166, 227, 0.3);
   pointer-events: none;
   z-index: 0;
@@ -75,12 +69,10 @@ body {
 @media screen and (min-width: 1440px) {
   :root {
       --header-height: 80px;
-      /* десктопна висота хедера відрізняється від мобільної */
     }
   .site-header__overlay {
     top: -90px;
     height: 100px;
-    /* десктопний розмір, з Figma-інспектора */
   }
 }
 
@@ -110,7 +102,7 @@ body {
 }
 
 /* =========================================================
-   ОДНА КНОПКА burger/close [data-menu-toggle]
+  ОДНА КНОПКА burger/close [data-menu-toggle]
    ========================================================= */
 .site-header__burger {
   position: relative;
@@ -180,9 +172,7 @@ body {
 }
 
 /* =========================================================
-   MOBILE MENU
-   Стан "відкрито" тепер через [data-open], не .is-open —
-   узгоджено з вимогою "JS працює тільки через data-атрибути".
+  MOBILE MENU
    ========================================================= */
 .mobile-menu {
   position: absolute;
@@ -210,8 +200,7 @@ body {
 }
 
 /* =========================================================
-   БЛОКУВАННЯ СКРОЛУ ПІД ЧАС ВІДКРИТОГО МЕНЮ
-   JS вішає data-scroll-lock на <body> при відкритті меню.
+  БЛОКУВАННЯ СКРОЛУ ПІД ЧАС ВІДКРИТОГО МЕНЮ
    ========================================================= */
 body[data-scroll-lock] {
   overflow: hidden;
@@ -357,7 +346,7 @@ screen and (min-width: 1440px) and (min-resolution: 2dppx) {
 }
 
 /* =========================================================
-   CHARACTERS
+  CHARACTERS
    ========================================================= */
 .mobile-menu__characters {
   left: 0;
@@ -399,7 +388,7 @@ screen and (min-width: 1440px) and (min-resolution: 2dppx) {
 }
 
 /* =========================================================
-   SITE HEADER — LEGAL VARIANT
+  SITE HEADER — LEGAL VARIANT
    ========================================================= */
 .site-header--legal .site-header__inner {
   justify-content: space-between;

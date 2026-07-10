@@ -11,7 +11,6 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  /* обрізання САМЕ по межі контейнера, не по всій ширині секції */
 }
 
 .gallery__title {
@@ -25,10 +24,7 @@
 }
 
 /* =========================================================
-   SLIDER WRAP + NAV BUTTONS
-   Кнопки-стрілки — той самий "дерев'яний" стиль, що й
-   .site-header__burger. Видимі ЗАВЖДИ (мобілка + десктоп),
-   position: absolute — накладені поверх слайдера.
+  SLIDER WRAP + NAV BUTTONS
    ========================================================= */
 .gallery__slider-wrap {
   position: relative;
@@ -88,7 +84,6 @@
   width: 24px;
   height: 24px;
   fill: rgb(58, 17, 0);
-  /* нова іконка — заливка (fill), не обводка (stroke) */
   pointer-events: none;
   transition: fill 0.2s ease-in-out;
 }
@@ -114,7 +109,7 @@
 }
 
 /* =========================================================
-   SWIPER
+  SWIPER
    ========================================================= */
 .gallery__slider {
   position: relative;
@@ -122,12 +117,10 @@
   flex: 1 1 auto;
   min-width: 0;
   overflow: visible;
-  /* обрізання відбувається на .gallery__container, тут потрібно для видимості blur-ефекту */
 }
 
 .gallery__slide {
   width: 260px;
-  /* мобільний дефолт — ТОЧНЕ значення ще не звірене з Figma */
   flex-shrink: 0;
   border-radius: 10px;
   overflow: hidden;
@@ -144,7 +137,7 @@
 }
 
 /* =========================================================
-   DESKTOP (1440px) — єдиний додатковий брейкпоінт
+  DESKTOP (1440px) — єдиний додатковий брейкпоінт
    ========================================================= */
 @media screen and (min-width: 1440px) {
   .gallery {
