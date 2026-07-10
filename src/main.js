@@ -1,5 +1,5 @@
 import './js/header';
-import './js/scroll';
+import './js/slider';
 import './css/styles.css';
 
 const header = document.querySelector('.site-header');
