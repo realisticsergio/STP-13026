@@ -1,5 +1,10 @@
-const menu = document.querySelector('[data-menu]');
-const menuToggle = document.querySelector('[data-menu-toggle]');
+const menuToggle = document.querySelector(
+  '.site-header__burger[data-action="open"]'
+);
+const menuClose = document.querySelector(
+  '.mobile-menu__close[data-action="close"]'
+);
+const menu = document.querySelector('.mobile-menu[data-visible]');
 const menuLinks = document.querySelectorAll('[data-menu-link]');
 const hero = document.querySelector('[data-hero]');
 
@@ -12,28 +17,31 @@ function openMenu() {
   if (!menu || !menuToggle) return;
 
   updateMenuHeight();
-  menu.setAttribute('data-open', '');
-  menu.setAttribute('aria-hidden', 'false');
-  menuToggle.setAttribute('aria-expanded', 'true');
-  document.body.setAttribute('data-scroll-lock', '');
+  menu.dataset.visible = 'open';
+  menuToggle.dataset.expanded = 'true';
+  menuToggle.setAttribute('aria-expanded', 'true'); // для доступності лишаємо окремо, це не стан-перемикач, а атрибут a11y
+  document.documentElement.dataset.scrollLock = '';
+  document.body.dataset.scrollLock = '';
 }
 
 function closeMenu() {
   if (!menu || !menuToggle) return;
 
-  menu.removeAttribute('data-open');
-  menu.setAttribute('aria-hidden', 'true');
+  menu.dataset.visible = 'close';
+  menuToggle.dataset.expanded = 'false';
   menuToggle.setAttribute('aria-expanded', 'false');
-  document.body.removeAttribute('data-scroll-lock');
+  delete document.documentElement.dataset.scrollLock;
+  delete document.body.dataset.scrollLock;
 }
 
 function toggleMenu() {
   if (!menu) return;
-  const isOpen = menu.hasAttribute('data-open');
+  const isOpen = menu.dataset.visible === 'open';
   isOpen ? closeMenu() : openMenu();
 }
 
 menuToggle?.addEventListener('click', toggleMenu);
+menuClose?.addEventListener('click', closeMenu);
 
 menuLinks.forEach(link => {
   link.addEventListener('click', closeMenu);
@@ -46,7 +54,7 @@ document.addEventListener('keydown', event => {
 });
 
 document.addEventListener('click', event => {
-  if (!menu || !menu.hasAttribute('data-open')) return;
+  if (!menu || menu.dataset.visible !== 'open') return;
 
   const clickedInsideMenu = menu.contains(event.target);
   const clickedToggle = menuToggle?.contains(event.target);
