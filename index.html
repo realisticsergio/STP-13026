@@ -8,7 +8,7 @@
     <script type="module" crossorigin src="/STP-13026/index.js"></script>
     <link rel="modulepreload" crossorigin href="/STP-13026/assets/vendor-CPlLvc-1.js">
     <link rel="stylesheet" crossorigin href="/STP-13026/assets/vendor-CP3Yr33f.css">
-    <link rel="stylesheet" crossorigin href="/STP-13026/assets/styles-DuNQhuRY.css">
+    <link rel="stylesheet" crossorigin href="/STP-13026/assets/styles-DZGgTrPr.css">
   </head>
   <body>
     <main>
@@ -38,8 +38,8 @@
           class="site-header__burger"
           type="button"
           aria-label="Open menu"
-          aria-expanded="false"
-          data-menu-toggle
+          data-action="open"
+          data-expanded="false"
         >
           <svg
             class="site-header__burger-icon"
@@ -60,12 +60,13 @@
             <use href="/STP-13026/assets/sprite-CMaG7KRF.svg#icon-close"></use>
           </svg>
         </button>
-        <div class="mobile-menu" aria-hidden="true" data-menu>
+
+        <div class="mobile-menu" data-visible="close">
           <div class="mobile-menu__panel">
             <div class="mobile-menu__top"></div>
 
             <nav class="mobile-menu__nav" aria-label="Mobile navigation">
-              <a class="is-active" href="#home" data-menu-link>Home</a>
+              <a data-nav-active href="#home" data-menu-link>Home</a>
               <a href="#about" data-menu-link>About the Game</a>
               <a href="#how-to-play" data-menu-link>How to Play</a>
               <a href="#gallery" data-menu-link>Gallery</a>
@@ -79,25 +80,30 @@
                 src="/STP-13026/assets/character-small.webp%20(1)-Dzy4fo9b.png"
                 alt=""
               />
-
               <img
                 class="mobile-menu__shadow mobile-menu__shadow--big"
                 src="/STP-13026/assets/character-big.webp%20(1)-FJOfCBQ8.png"
                 alt=""
               />
-
               <img
                 class="mobile-menu__character mobile-menu__character--small"
                 src="/STP-13026/assets/hero-desctop-2x_5-AywpcbmO.webp"
                 alt=""
               />
-
               <img
                 class="mobile-menu__character mobile-menu__character--big"
                 src="/STP-13026/assets/hero-desctop-1x_7-C2rcIc-7.webp"
                 alt=""
               />
             </div>
+
+            <button
+              type="button"
+              class="mobile-menu__close"
+              data-action="close"
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>
@@ -106,7 +112,7 @@
 </html>
 
 
-      <section class="hero">
+      <section class="hero" id="home">
   <div class="container hero__container background-hero">
     <div class="hero__content">
       <div class="hero__content-title">
@@ -372,7 +378,7 @@
       </button>
 
       <div class="gallery__slider swiper" data-gallery-slider>
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper" data-swiper-wrapper>
           <div class="swiper-slide gallery__slide" data-gallery-slide>
             <img
               class="gallery__slide-img"
